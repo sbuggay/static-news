@@ -1,0 +1,398 @@
+<!DOCTYPE html><html lang="en"><head><title>Static News</title><meta charSet="utf-8"/><meta name="description" content="Static delayed Hacker News."/><meta name="theme-color" media="(prefers-color-scheme: light)" content="white"/><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1d1f21"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><meta name="application-name" content="Static News"/><meta name="apple-mobile-web-app-title" content="Static News"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="#1d1f21"/><link rel="preload" href="styles.css?v=1719910855186" as="style"/><link rel="stylesheet" href="styles.css?v=1719910855186"/></head><body><div id="container"><div id="inner"><header><a href="/">Static News</a><a href="/about">about</a></header><div id="content"><div><div id="title"><a href="https://isocpp.org/files/papers/P2996R4.html">Reflection for C++26</a> <span class="domain">(<a href="https://isocpp.org">isocpp.org</a>)</span></div><div class="subtext"><span>svlasov</span> | <span>91 comments</span></div><br/><div><div id="40851756" class="c"><input type="checkbox" id="c-40851756" checked=""/><div class="controls bullet"><span class="by">lallysingh</span><span>|</span><a href="#40853995">next</a><span>|</span><label class="collapse" for="c-40851756">[-]</label><label class="expand" for="c-40851756">[10 more]</label></div><br/><div class="children"><div class="content">Wow this got really long.  I was one of the coauthors for a reflection proposal (N3340) over a dozen years ago.  Implementing compile-time reflection is honestly trivial - you basically transfer data from the symbol table on-demand into template specializations.  It was roughly 1500 LOC to modify g++ to do it.<p>Looking at the examples (<a href="https:&#x2F;&#x2F;isocpp.org&#x2F;files&#x2F;papers&#x2F;P2996R4.html#examples" rel="nofollow">https:&#x2F;&#x2F;isocpp.org&#x2F;files&#x2F;papers&#x2F;P2996R4.html#examples</a>) what really stands out is the direct integration of type-syntax into the language.  It fits in with a certain token-substitution way that connects back to templates.  It also replaces some of the uglier operators (typeof?).<p>I hope it goes int!  During the language&#x27;s stagnation I left for a while, perhaps it&#x27;ll be competitive again soon.</div><br/><div id="40851990" class="c"><input type="checkbox" id="c-40851990" checked=""/><div class="controls bullet"><span class="by">stiglitz</span><span>|</span><a href="#40851756">parent</a><span>|</span><a href="#40853995">next</a><span>|</span><label class="collapse" for="c-40851990">[-]</label><label class="expand" for="c-40851990">[9 more]</label></div><br/><div class="children"><div class="content">By ”stagnation” do you mean “not getting new features”?</div><br/><div id="40852476" class="c"><input type="checkbox" id="c-40852476" checked=""/><div class="controls bullet"><span class="by">jacoblambda</span><span>|</span><a href="#40851756">root</a><span>|</span><a href="#40851990">parent</a><span>|</span><a href="#40852457">next</a><span>|</span><label class="collapse" for="c-40852476">[-]</label><label class="expand" for="c-40852476">[5 more]</label></div><br/><div class="children"><div class="content">C++ has gotten a ton of quality of life features with each update. The issue is less that new features aren&#x27;t coming and more that new features bake through countless iterations of proposals for close to or often over a decade until everyone in WG21 is happy.<p>So it&#x27;s not that we aren&#x27;t getting features. They are coming quite fast and people regularly complain that new C++ has too many things for them to learn and keep up with. The issue is that those are the same features everyone has been asking for for over a decade so the people that really care found workarounds and eventually move over to the new std way of doing things when they can while everyone else continues waiting for that one feature they really care about.</div><br/><div id="40854369" class="c"><input type="checkbox" id="c-40854369" checked=""/><div class="controls bullet"><span class="by">okanat</span><span>|</span><a href="#40851756">root</a><span>|</span><a href="#40852476">parent</a><span>|</span><a href="#40854365">next</a><span>|</span><label class="collapse" for="c-40854369">[-]</label><label class="expand" for="c-40854369">[1 more]</label></div><br/><div class="children"><div class="content">I think the bureaucratic cadence of the things also make C++ not a unified entity. C++ is patchwork language. So many of the new features don&#x27;t work well together or don&#x27;t fit together or they have conflicting goals.<p>Since the proposals target problems with differing philosophies, they each have different traps in them from bad time complexity to outright unrefined behavior. Keeping up with the updates hard because of this.<p>I think many C++ projects are (or will be) basically infeasible to maintain not because of the old problems but due to the exploding complexity of the interactions of all features, unless developers actively ban using large parts of the language.</div><br/></div></div><div id="40854365" class="c"><input type="checkbox" id="c-40854365" checked=""/><div class="controls bullet"><span class="by">Grayskull</span><span>|</span><a href="#40851756">root</a><span>|</span><a href="#40852476">parent</a><span>|</span><a href="#40854369">prev</a><span>|</span><a href="#40854139">next</a><span>|</span><label class="collapse" for="c-40854365">[-]</label><label class="expand" for="c-40854365">[1 more]</label></div><br/><div class="children"><div class="content">&gt; They are coming quite fast and people regularly complain that new C++ has too many things for them to learn and keep up with.<p>I never got this. Can&#x27;t you just decide to use subset of the language?
+No-one forces people to use every single feature. It&#x27;s okay to use C++ like &quot;C with classes&quot; and occasionally cool new thing, when it is right tool for the job.
+Only people where this argument is truly valid are compiler&#x2F;tools people.</div><br/></div></div><div id="40854139" class="c"><input type="checkbox" id="c-40854139" checked=""/><div class="controls bullet"><span class="by">physicsguy</span><span>|</span><a href="#40851756">root</a><span>|</span><a href="#40852476">parent</a><span>|</span><a href="#40854365">prev</a><span>|</span><a href="#40853490">next</a><span>|</span><label class="collapse" for="c-40854139">[-]</label><label class="expand" for="c-40854139">[1 more]</label></div><br/><div class="children"><div class="content">&gt; the people that really care found workarounds<p>Or stopped writing C++, I&#x27;d consider myself one of these for many use cases I used to use it for.</div><br/></div></div><div id="40853490" class="c"><input type="checkbox" id="c-40853490" checked=""/><div class="controls bullet"><span class="by">adrianN</span><span>|</span><a href="#40851756">root</a><span>|</span><a href="#40852476">parent</a><span>|</span><a href="#40854139">prev</a><span>|</span><a href="#40852457">next</a><span>|</span><label class="collapse" for="c-40853490">[-]</label><label class="expand" for="c-40853490">[1 more]</label></div><br/><div class="children"><div class="content">The people complaining and the people asking for features need not be overlapping sets.</div><br/></div></div></div></div><div id="40852457" class="c"><input type="checkbox" id="c-40852457" checked=""/><div class="controls bullet"><span class="by">vlovich123</span><span>|</span><a href="#40851756">root</a><span>|</span><a href="#40851990">parent</a><span>|</span><a href="#40852476">prev</a><span>|</span><a href="#40852374">next</a><span>|</span><label class="collapse" for="c-40852457">[-]</label><label class="expand" for="c-40852457">[2 more]</label></div><br/><div class="children"><div class="content">N3340 is from 2011. Prior to c++11 they had failed to deliver major changes to the language. And arguably the disfunction is still there where big ideas get destroyed in committee (reflection) or take forever and come out half-baked (modules).</div><br/><div id="40852518" class="c"><input type="checkbox" id="c-40852518" checked=""/><div class="controls bullet"><span class="by">rerdavies</span><span>|</span><a href="#40851756">root</a><span>|</span><a href="#40852457">parent</a><span>|</span><a href="#40852374">next</a><span>|</span><label class="collapse" for="c-40852518">[-]</label><label class="expand" for="c-40852518">[1 more]</label></div><br/><div class="children"><div class="content">Speaking of half-baked, did continuations get fixed?</div><br/></div></div></div></div></div></div></div></div><div id="40853995" class="c"><input type="checkbox" id="c-40853995" checked=""/><div class="controls bullet"><span class="by">qalmakka</span><span>|</span><a href="#40851756">prev</a><span>|</span><a href="#40854383">next</a><span>|</span><label class="collapse" for="c-40853995">[-]</label><label class="expand" for="c-40853995">[5 more]</label></div><br/><div class="children"><div class="content">While I love this paper and this proposal in general, as a C++ developer every time C++ adds a new major feature I get somewhat worried about two things:<p>1. how immense the language has become, and how hard it got to learn and implement<p>2. how &quot;modernising&quot; C++ gives developers less incentives to convince management to switch to safer languages<p>While I like C++ and how crazy powerful it is, I also must admit decades of using it that teaching it to new developers has become immensely hard in the last few years, and the &quot;easier&quot; inevitably ends up being the unsafe one (what else can you do when the language itself tells you to refrain from using `new`?).</div><br/><div id="40854317" class="c"><input type="checkbox" id="c-40854317" checked=""/><div class="controls bullet"><span class="by">pjmlp</span><span>|</span><a href="#40853995">parent</a><span>|</span><a href="#40854131">next</a><span>|</span><label class="collapse" for="c-40854317">[-]</label><label class="expand" for="c-40854317">[1 more]</label></div><br/><div class="children"><div class="content">While I share the feeling, I don&#x27;t feel that my daily languages (Java, C#, TypeScript) are getting that far behind.<p>Even Go is rediscovering that staying simple just doesn&#x27;t happen for any language that gets industry adoption at scale.</div><br/></div></div><div id="40854017" class="c"><input type="checkbox" id="c-40854017" checked=""/><div class="controls bullet"><span class="by">fragmede</span><span>|</span><a href="#40853995">parent</a><span>|</span><a href="#40854131">prev</a><span>|</span><a href="#40854746">next</a><span>|</span><label class="collapse" for="c-40854017">[-]</label><label class="expand" for="c-40854017">[1 more]</label></div><br/><div class="children"><div class="content">Yeah that&#x27;s because you&#x27;re not supposed to be using &quot;new&quot; anymore since the introduction of smart pointers in
+C++11. Std::shared_ptr and std::unique_ptr are preferred. Shared pointers ref count and auto-delete, and unique pointers can&#x27;t be copied.</div><br/></div></div></div></div><div id="40854383" class="c"><input type="checkbox" id="c-40854383" checked=""/><div class="controls bullet"><span class="by">w4rh4wk5</span><span>|</span><a href="#40853995">prev</a><span>|</span><a href="#40851335">next</a><span>|</span><label class="collapse" for="c-40854383">[-]</label><label class="expand" for="c-40854383">[1 more]</label></div><br/><div class="children"><div class="content">Do I understand correctly that this proposal does not include annotations (i.e. attributes).<p>More specifically, with this I can iterate over struct members and get their names and types, but I cannot attach additional information to these members, like whether they should be serialized or under which name.<p>The referenced proposal P1887R1 covers this, but that&#x27;s not included here, right?<p>P1887R1: <a href="https:&#x2F;&#x2F;www.open-std.org&#x2F;jtc1&#x2F;sc22&#x2F;wg21&#x2F;docs&#x2F;papers&#x2F;2020&#x2F;p1887r1.pdf" rel="nofollow">https:&#x2F;&#x2F;www.open-std.org&#x2F;jtc1&#x2F;sc22&#x2F;wg21&#x2F;docs&#x2F;papers&#x2F;2020&#x2F;p18...</a></div><br/></div></div><div id="40851335" class="c"><input type="checkbox" id="c-40851335" checked=""/><div class="controls bullet"><span class="by">TillE</span><span>|</span><a href="#40854383">prev</a><span>|</span><a href="#40851823">next</a><span>|</span><label class="collapse" for="c-40851335">[-]</label><label class="expand" for="c-40851335">[5 more]</label></div><br/><div class="children"><div class="content">Finally. I think there have been proposals since C++17 at least, and all I really wanted is for them to solve the common problem of basic static reflection for enums (without hacks like magic_enum uses).</div><br/><div id="40851454" class="c"><input type="checkbox" id="c-40851454" checked=""/><div class="controls bullet"><span class="by">jjmarr</span><span>|</span><a href="#40851335">parent</a><span>|</span><a href="#40851823">next</a><span>|</span><label class="collapse" for="c-40851454">[-]</label><label class="expand" for="c-40851454">[4 more]</label></div><br/><div class="children"><div class="content">magic_enum is killing my build time with endless template instantiations. Is this going to be faster?</div><br/><div id="40851746" class="c"><input type="checkbox" id="c-40851746" checked=""/><div class="controls bullet"><span class="by">leni536</span><span>|</span><a href="#40851335">root</a><span>|</span><a href="#40851454">parent</a><span>|</span><a href="#40853037">next</a><span>|</span><label class="collapse" for="c-40851746">[-]</label><label class="expand" for="c-40851746">[2 more]</label></div><br/><div class="children"><div class="content">magic_enum works by walking all possible enumeration values from one-by-one in a wide range at compile time, instantiating a function template for each one so it can extract the __PRETTY_FUNCTION__ name, which is very slow. The C++26 feature just directly returns the vector of the named enumerators in one go, so it should be way faster.<p>They have a reference implementation on godbolt under clang, so you can play around with that. I did not try it yet.</div><br/><div id="40852230" class="c"><input type="checkbox" id="c-40852230" checked=""/><div class="controls bullet"><span class="by">jjmarr</span><span>|</span><a href="#40851335">root</a><span>|</span><a href="#40851746">parent</a><span>|</span><a href="#40853037">next</a><span>|</span><label class="collapse" for="c-40852230">[-]</label><label class="expand" for="c-40852230">[1 more]</label></div><br/><div class="children"><div class="content">Wow. I&#x27;m trying to make some of these template instantiations explicit on a large project I&#x27;m on as magic_enum is one of the largest contributors to our build-time.<p>It&#x27;s nice to know I can just transition to C++26 to fix this.</div><br/></div></div></div></div><div id="40853037" class="c"><input type="checkbox" id="c-40853037" checked=""/><div class="controls bullet"><span class="by">mehrdadn</span><span>|</span><a href="#40851335">root</a><span>|</span><a href="#40851454">parent</a><span>|</span><a href="#40851746">prev</a><span>|</span><a href="#40851823">next</a><span>|</span><label class="collapse" for="c-40853037">[-]</label><label class="expand" for="c-40853037">[1 more]</label></div><br/><div class="children"><div class="content">Do you think you could try my library [1] and let me know how it performs in comparison? I&#x27;ve been curious about its compile-time performance, but I&#x27;ve never tried to compare its performance against that of magic_enum.<p>[1] <a href="https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=32236447">https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=32236447</a></div><br/></div></div></div></div></div></div><div id="40851823" class="c"><input type="checkbox" id="c-40851823" checked=""/><div class="controls bullet"><span class="by">gpderetta</span><span>|</span><a href="#40851335">prev</a><span>|</span><a href="#40851614">next</a><span>|</span><label class="collapse" for="c-40851823">[-]</label><label class="expand" for="c-40851823">[4 more]</label></div><br/><div class="children"><div class="content">I have been waiting for static reflection for the last 20 years. The current proposal seems quite nice, but the real question is whether any non trivial usage will kill compilation performance.</div><br/><div id="40852061" class="c"><input type="checkbox" id="c-40852061" checked=""/><div class="controls bullet"><span class="by">a1o</span><span>|</span><a href="#40851823">parent</a><span>|</span><a href="#40851614">next</a><span>|</span><label class="collapse" for="c-40852061">[-]</label><label class="expand" for="c-40852061">[3 more]</label></div><br/><div class="children"><div class="content">The implementation that exists for clang is fast but we will see how it goes with MSVC and GCC.</div><br/><div id="40852066" class="c"><input type="checkbox" id="c-40852066" checked=""/><div class="controls bullet"><span class="by">gpderetta</span><span>|</span><a href="#40851823">root</a><span>|</span><a href="#40852061">parent</a><span>|</span><a href="#40851614">next</a><span>|</span><label class="collapse" for="c-40852066">[-]</label><label class="expand" for="c-40852066">[2 more]</label></div><br/><div class="children"><div class="content">At least is a proof existence that it can be done.</div><br/><div id="40854124" class="c"><input type="checkbox" id="c-40854124" checked=""/><div class="controls bullet"><span class="by">flohofwoe</span><span>|</span><a href="#40851823">root</a><span>|</span><a href="#40852066">parent</a><span>|</span><a href="#40851614">next</a><span>|</span><label class="collapse" for="c-40854124">[-]</label><label class="expand" for="c-40854124">[1 more]</label></div><br/><div class="children"><div class="content">That doesn&#x27;t mean much unfortunately, Clang had a fully working C99 designated initialization in C++ for many years, but the designated initialization that ended up in C++20 is only a butchered version of the full feature set despite Clang clearly demonstrating that it&#x27;s possible to integrate the full C99 designated init feature set into C++.</div><br/></div></div></div></div></div></div></div></div><div id="40851614" class="c"><input type="checkbox" id="c-40851614" checked=""/><div class="controls bullet"><span class="by">stefanos82</span><span>|</span><a href="#40851823">prev</a><span>|</span><a href="#40851743">next</a><span>|</span><label class="collapse" for="c-40851614">[-]</label><label class="expand" for="c-40851614">[32 more]</label></div><br/><div class="children"><div class="content">Can I ask a naive question that consists of two parts and please don&#x27;t flame me? lol<p><pre><code>  * What type of problems static reflection could solve, in general?
+  * Are there specific cases and &#x2F; or situations where static reflection could resolve such case, even simplify an unnecessary complexity?</code></pre></div><br/><div id="40851795" class="c"><input type="checkbox" id="c-40851795" checked=""/><div class="controls bullet"><span class="by">edflsafoiewq</span><span>|</span><a href="#40851614">parent</a><span>|</span><a href="#40851709">next</a><span>|</span><label class="collapse" for="c-40851795">[-]</label><label class="expand" for="c-40851795">[10 more]</label></div><br/><div class="children"><div class="content">Here are some examples from the linked paper<p>* Converting enum values to strings, and vice versa<p>* Parsing command line arguments from a struct definition (like Rust&#x27;s clap)<p>* Simple definition of tuple and variant types, without the complex metaprogramming tricks currently used<p>* Automatic conversion between struct-of-arrays and array-of-structs form<p>* A &quot;universal formatter&quot; that can print any struct with all its fields<p>* Hashing a struct by iterating over its fields<p>* Convert between a struct and tuple, tuple concatenation, named tuples</div><br/><div id="40852011" class="c"><input type="checkbox" id="c-40852011" checked=""/><div class="controls bullet"><span class="by">greenavocado</span><span>|</span><a href="#40851614">root</a><span>|</span><a href="#40851795">parent</a><span>|</span><a href="#40851709">next</a><span>|</span><label class="collapse" for="c-40852011">[-]</label><label class="expand" for="c-40852011">[9 more]</label></div><br/><div class="children"><div class="content">Converting enum values to strings, and vice versa<p><pre><code>    enum class Color { Red, Green, Blue };
+
+    template&lt;typename E&gt;
+    std::string enum_to_string(E value) {
+        constexpr auto enum_info = reflect(E);
+        for (const auto&amp; enumerator : enum_info.enumerators()) {
+            if (enumerator.value() == value) {
+                return std::string(enumerator.name());
+            }
+        }
+        return &quot;Unknown&quot;;
+    }
+
+    template&lt;typename E&gt;
+    E string_to_enum(const std::string&amp; str) {
+        constexpr auto enum_info = reflect(E);
+        for (const auto&amp; enumerator : enum_info.enumerators()) {
+            if (enumerator.name() == str) {
+                return enumerator.value();
+            }
+        }
+        throw std::invalid_argument(&quot;Invalid enum string&quot;);
+    }
+
+</code></pre>
+Parsing command line arguments from a struct definition<p><pre><code>    struct CLIOptions {
+        std::string input_file;
+        int num_threads = 1;
+        bool verbose = false;
+    };
+
+    template&lt;typename T&gt;
+    T parse_cli_args(int argc, char* argv[]) {
+        T options;
+        constexpr auto struct_info = reflect(T);
+
+        for (int i = 1; i &lt; argc; i++) {
+            std::string arg = argv[i];
+            for (const auto&amp; member : struct_info.members()) {
+                if (arg == &quot;--&quot; + std::string(member.name())) {
+                    if (member.type() == typeid(bool)) {
+                        member.set(options, true);
+                    } else if (i + 1 &lt; argc) {
+                        member.set(options, std::string(argv[++i]));
+                    }
+                    break;
+                }
+            }
+        }
+        return options;
+    }
+
+    </code></pre>
+Simple definition of tuple and variant types<p><pre><code>    &#x2F;&#x2F; Common data structure used in examples below
+
+    struct Person {
+        std::string name;
+        int age;
+        double height;
+    };
+
+    &#x2F;&#x2F; Tuple, without reflection
+
+    int main() {
+        std::tuple&lt;std::string, int, double&gt; person_tuple{&quot;John Doe&quot;, 30, 175.5};
+
+        std::cout &lt;&lt; &quot;Name: &quot; &lt;&lt; std::get&lt;0&gt;(person_tuple) &lt;&lt; std::endl;
+        std::cout &lt;&lt; &quot;Age: &quot; &lt;&lt; std::get&lt;1&gt;(person_tuple) &lt;&lt; std::endl;
+        std::cout &lt;&lt; &quot;Height: &quot; &lt;&lt; std::get&lt;2&gt;(person_tuple) &lt;&lt; std::endl;
+
+        Person p{&quot;Jane Doe&quot;, 25, 165.0};
+        auto p_tuple = std::make_tuple(p.name, p.age, p.height);
+
+        return 0;
+    }
+
+    &#x2F;&#x2F; Tuple, with reflection
+
+    int main() {
+        std::tuple&lt;std::string, int, double&gt; person_tuple{&quot;John Doe&quot;, 30, 175.5};
+
+        std::apply([](const auto&amp;... args) {
+            (..., (std::cout &lt;&lt; reflect(args).name() &lt;&lt; &quot;: &quot; &lt;&lt; args &lt;&lt; std::endl));
+        }, person_tuple);
+
+        Person p{&quot;Jane Doe&quot;, 25, 165.0};
+        auto p_tuple = std::apply([&amp;p](auto... members) {
+            return std::make_tuple(members.get(p)...);
+        }, reflect(Person).members());
+
+        return 0;
+    }
+
+    &#x2F;&#x2F; Variant, without reflection
+
+    int main() {
+        std::variant&lt;int, std::string, Person&gt; var;
+
+        var = 42;
+        std::cout &lt;&lt; &quot;Variant holds: &quot; &lt;&lt; std::get&lt;int&gt;(var) &lt;&lt; std::endl;
+
+        var = &quot;Hello, World!&quot;;
+        std::cout &lt;&lt; &quot;Variant holds: &quot; &lt;&lt; std::get&lt;std::string&gt;(var) &lt;&lt; std::endl;
+
+        var = Person{&quot;Alice&quot;, 28, 170.0};
+        const auto&amp; p = std::get&lt;Person&gt;(var);
+        std::cout &lt;&lt; &quot;Variant holds Person: &quot; &lt;&lt; p.name &lt;&lt; &quot;, &quot; &lt;&lt; p.age &lt;&lt; &quot;, &quot; &lt;&lt; p.height &lt;&lt; std::endl;
+
+        std::visit([](const auto&amp; v) {
+            using T = std::decay_t&lt;decltype(v)&gt;;
+            if constexpr (std::is_same_v&lt;T, int&gt;)
+                std::cout &lt;&lt; &quot;Int: &quot; &lt;&lt; v &lt;&lt; std::endl;
+            else if constexpr (std::is_same_v&lt;T, std::string&gt;)
+                std::cout &lt;&lt; &quot;String: &quot; &lt;&lt; v &lt;&lt; std::endl;
+            else if constexpr (std::is_same_v&lt;T, Person&gt;)
+                std::cout &lt;&lt; &quot;Person: &quot; &lt;&lt; v.name &lt;&lt; std::endl;
+        }, var);
+
+        return 0;
+    }
+
+    &#x2F;&#x2F; Variant, with reflection
+
+    int main() {
+        std::variant&lt;int, std::string, Person&gt; var;
+
+        var = 42;
+        std::cout &lt;&lt; &quot;Variant holds: &quot; &lt;&lt; std::get&lt;int&gt;(var) &lt;&lt; std::endl;
+
+        var = &quot;Hello, World!&quot;;
+        std::cout &lt;&lt; &quot;Variant holds: &quot; &lt;&lt; std::get&lt;std::string&gt;(var) &lt;&lt; std::endl;
+
+        var = Person{&quot;Alice&quot;, 28, 170.0};
+        
+        std::visit([](const auto&amp; v) {
+            constexpr auto type_info = reflect(std::decay_t&lt;decltype(v)&gt;);
+            std::cout &lt;&lt; &quot;Variant holds &quot; &lt;&lt; type_info.name() &lt;&lt; &quot;: &quot;;
+            if constexpr (type_info.is_class()) {
+                for (const auto&amp; member : type_info.members()) {
+                    std::cout &lt;&lt; member.name() &lt;&lt; &quot;: &quot; &lt;&lt; member.get(v) &lt;&lt; &quot;, &quot;;
+                }
+            } else {
+                std::cout &lt;&lt; v;
+            }
+            std::cout &lt;&lt; std::endl;
+        }, var);
+
+        return 0;
+    }
+
+</code></pre>
+Automatic conversion between struct-of-arrays and array-of-structs<p><pre><code>    template&lt;typename Struct, size_t N&gt;
+    auto soa_to_aos(const StructOfArrays&lt;Struct, N&gt;&amp; soa) {
+        std::array&lt;Struct, N&gt; aos;
+        constexpr auto struct_info = reflect(Struct);
+
+        for (size_t i = 0; i &lt; N; ++i) {
+            for (const auto&amp; member : struct_info.members()) {
+                member.set(aos[i], soa.get(member.name())[i]);
+            }
+        }
+        return aos;
+    }
+
+    template&lt;typename Struct, size_t N&gt;
+    auto aos_to_soa(const std::array&lt;Struct, N&gt;&amp; aos) {
+        StructOfArrays&lt;Struct, N&gt; soa;
+        constexpr auto struct_info = reflect(Struct);
+
+        for (size_t i = 0; i &lt; N; ++i) {
+            for (const auto&amp; member : struct_info.members()) {
+                soa.get(member.name())[i] = member.get(aos[i]);
+            }
+        }
+        return soa;
+    }
+
+</code></pre>
+Universal formatter:<p><pre><code>    template&lt;typename T&gt;
+    std::string format(const T&amp; obj) {
+        std::ostringstream oss;
+        constexpr auto type_info = reflect(T);
+
+        oss &lt;&lt; type_info.name() &lt;&lt; &quot; {\n&quot;;
+        for (const auto&amp; member : type_info.members()) {
+            oss &lt;&lt; &quot;  &quot; &lt;&lt; member.name() &lt;&lt; &quot;: &quot; &lt;&lt; member.get(obj) &lt;&lt; &quot;,\n&quot;;
+        }
+        oss &lt;&lt; &quot;}&quot;;
+        return oss.str();
+    }
+</code></pre>
+Hashing a struct by iterating over its fields:<p><pre><code>    template&lt;typename T&gt;
+    size_t hash_struct(const T&amp; obj) {
+        size_t hash = 0;
+        constexpr auto type_info = reflect(T);
+
+        for (const auto&amp; member : type_info.members()) {
+            hash ^= std::hash&lt;decltype(member.get(obj))&gt;{}(member.get(obj)) + 0x9e3779b9 + (hash &lt;&lt; 6) + (hash &gt;&gt; 2);
+        }
+        return hash;
+    }
+
+</code></pre>
+Convert between struct and tuple, tuple concatenation, named tuples:<p><pre><code>    &#x2F;&#x2F; Struct to tuple
+    template&lt;typename Struct&gt;
+    auto struct_to_tuple(const Struct&amp; s) {
+        return std::apply([&amp;](auto&amp;&amp;... members) {
+            return std::make_tuple(members.get(s)...);
+        }, reflect(Struct).members());
+    }
+
+    &#x2F;&#x2F; Tuple to struct
+    template&lt;typename Struct, typename Tuple&gt;
+    Struct tuple_to_struct(const Tuple&amp; t) {
+        Struct s;
+        std::apply([&amp;](auto&amp;&amp;... members) {
+            ((members.set(s, std::get&lt;members.index()&gt;(t))), ...);
+        }, reflect(Struct).members());
+        return s;
+    }
+
+    &#x2F;&#x2F; Tuple concatenation
+    template&lt;typename... Tuples&gt;
+    auto tuple_concat(Tuples&amp;&amp;... tuples) {
+        return std::tuple_cat(std::forward&lt;Tuples&gt;(tuples)...);
+    }
+
+    &#x2F;&#x2F; Named tuple
+    template&lt;typename... Members&gt;
+    struct NamedTuple {
+        REFLECT_NAMED_MEMBERS(Members...);
+    };</code></pre></div><br/><div id="40852303" class="c"><input type="checkbox" id="c-40852303" checked=""/><div class="controls bullet"><span class="by">fluoridation</span><span>|</span><a href="#40851614">root</a><span>|</span><a href="#40852011">parent</a><span>|</span><a href="#40851709">next</a><span>|</span><label class="collapse" for="c-40852303">[-]</label><label class="expand" for="c-40852303">[8 more]</label></div><br/><div class="children"><div class="content">This is terrible. You can&#x27;t just do Enum::Member.str or something?</div><br/><div id="40853438" class="c"><input type="checkbox" id="c-40853438" checked=""/><div class="controls bullet"><span class="by">andersa</span><span>|</span><a href="#40851614">root</a><span>|</span><a href="#40852303">parent</a><span>|</span><a href="#40854151">next</a><span>|</span><label class="collapse" for="c-40853438">[-]</label><label class="expand" for="c-40853438">[1 more]</label></div><br/><div class="children"><div class="content">Of course not. We must involve 10 layers of templates that mere mortals cannot read and compilers cannot process in reasonable time so the academics at the committee will be happy.<p>Addressing real problems with simple solutions isn&#x27;t allowed.</div><br/></div></div><div id="40854151" class="c"><input type="checkbox" id="c-40854151" checked=""/><div class="controls bullet"><span class="by">Aardwolf</span><span>|</span><a href="#40851614">root</a><span>|</span><a href="#40852303">parent</a><span>|</span><a href="#40853438">prev</a><span>|</span><a href="#40852845">next</a><span>|</span><label class="collapse" for="c-40854151">[-]</label><label class="expand" for="c-40854151">[2 more]</label></div><br/><div class="children"><div class="content">Ouch, I first thought this was the example of how to do these things _before_ reflection is introduced to C++<p>The for loop required to do enum to string really makes it</div><br/><div id="40854286" class="c"><input type="checkbox" id="c-40854286" checked=""/><div class="controls bullet"><span class="by">einpoklum</span><span>|</span><a href="#40851614">root</a><span>|</span><a href="#40854151">parent</a><span>|</span><a href="#40852845">next</a><span>|</span><label class="collapse" for="c-40854286">[-]</label><label class="expand" for="c-40854286">[1 more]</label></div><br/><div class="children"><div class="content">You can use `.name()` and that also works fine. Remember std::string is a heap-based thing.</div><br/></div></div></div></div><div id="40852845" class="c"><input type="checkbox" id="c-40852845" checked=""/><div class="controls bullet"><span class="by">kllrnohj</span><span>|</span><a href="#40851614">root</a><span>|</span><a href="#40852303">parent</a><span>|</span><a href="#40854151">prev</a><span>|</span><a href="#40853083">next</a><span>|</span><label class="collapse" for="c-40852845">[-]</label><label class="expand" for="c-40852845">[1 more]</label></div><br/><div class="children"><div class="content">That&#x27;ll inevitably be a utility function that exists, but C++ generally prefers broadly useful language primitives over single-case helpers</div><br/></div></div><div id="40853083" class="c"><input type="checkbox" id="c-40853083" checked=""/><div class="controls bullet"><span class="by">j16sdiz</span><span>|</span><a href="#40851614">root</a><span>|</span><a href="#40852303">parent</a><span>|</span><a href="#40852845">prev</a><span>|</span><a href="#40851709">next</a><span>|</span><label class="collapse" for="c-40853083">[-]</label><label class="expand" for="c-40853083">[3 more]</label></div><br/><div class="children"><div class="content">This is how C++ language usually works.  Just some primitive for building libraries on. Expect some library change come later.</div><br/><div id="40854204" class="c"><input type="checkbox" id="c-40854204" checked=""/><div class="controls bullet"><span class="by">coopierez</span><span>|</span><a href="#40851614">root</a><span>|</span><a href="#40853083">parent</a><span>|</span><a href="#40851709">next</a><span>|</span><label class="collapse" for="c-40854204">[-]</label><label class="expand" for="c-40854204">[2 more]</label></div><br/><div class="children"><div class="content">Thankfully it is so easy to quickly import libraries into C++...</div><br/><div id="40854324" class="c"><input type="checkbox" id="c-40854324" checked=""/><div class="controls bullet"><span class="by">pjmlp</span><span>|</span><a href="#40851614">root</a><span>|</span><a href="#40854204">parent</a><span>|</span><a href="#40851709">next</a><span>|</span><label class="collapse" for="c-40854324">[-]</label><label class="expand" for="c-40854324">[1 more]</label></div><br/><div class="children"><div class="content">It actually is, for anyone using Conan or vcpkg.</div><br/></div></div></div></div></div></div></div></div></div></div></div></div><div id="40851709" class="c"><input type="checkbox" id="c-40851709" checked=""/><div class="controls bullet"><span class="by">jcranmer</span><span>|</span><a href="#40851614">parent</a><span>|</span><a href="#40851795">prev</a><span>|</span><a href="#40853615">next</a><span>|</span><label class="collapse" for="c-40851709">[-]</label><label class="expand" for="c-40851709">[3 more]</label></div><br/><div class="children"><div class="content">The main canonical use case for static reflection is serialization, where serialize&lt;T&gt;() can easily have a default case of calling serialize() on each of the fields. In the more general case, you basically want to have some library method that does something based on the structure of a struct or class, without having to define some sort of explicit, intrusive interface that said struct or class implementation has to provide.<p>Does static reflection simplify such cases? ... Outlook unclear. It&#x27;s definitely gnarlier to actually write the serialize() method, and in many cases, it does feel like a better option is to write a specific domain-specific language to specify what you want to specify, with a tool to operate on it as appropriate (think something like protobufs for serialization).</div><br/><div id="40854102" class="c"><input type="checkbox" id="c-40854102" checked=""/><div class="controls bullet"><span class="by">petters</span><span>|</span><a href="#40851614">root</a><span>|</span><a href="#40851709">parent</a><span>|</span><a href="#40853615">next</a><span>|</span><label class="collapse" for="c-40854102">[-]</label><label class="expand" for="c-40854102">[2 more]</label></div><br/><div class="children"><div class="content">Serialisation often needs additional information not present in the struct definition: for enabling backwards-compatibility and default values.<p>Same for command line parameters. We want documentation strings, maybe dashes in the name etc.<p>But that can surely be solved with a little more advanced struct</div><br/><div id="40854291" class="c"><input type="checkbox" id="c-40854291" checked=""/><div class="controls bullet"><span class="by">einpoklum</span><span>|</span><a href="#40851614">root</a><span>|</span><a href="#40854102">parent</a><span>|</span><a href="#40853615">next</a><span>|</span><label class="collapse" for="c-40854291">[-]</label><label class="expand" for="c-40854291">[1 more]</label></div><br/><div class="children"><div class="content">I have one word for you: attributes (which the compiler, and the reflector, know about).</div><br/></div></div></div></div></div></div><div id="40853615" class="c"><input type="checkbox" id="c-40853615" checked=""/><div class="controls bullet"><span class="by">utensil4778</span><span>|</span><a href="#40851614">parent</a><span>|</span><a href="#40851709">prev</a><span>|</span><a href="#40851942">next</a><span>|</span><label class="collapse" for="c-40853615">[-]</label><label class="expand" for="c-40853615">[1 more]</label></div><br/><div class="children"><div class="content">Maybe this doesn&#x27;t count as static, but I used to regularly use reflection in C# to generate code for interacting with foreign DLLs.<p>This was a video game mod, essentially. I needed to create a text interface to modify settings for any other mod that might be installed. Other mods would simply implement a settings class with certain attributes, then I could list out all fields and their types. The list was processed into a sort of tree presented through the chat interface. From there I can generate code to modify that settings class from outside its assembly and raise value change events.<p>The reflection part of that was extremely simple, but just because that&#x27;s how C# works. C# makes a task like this almost trivial.<p>At my current job, we have a similar thing. Classes decorated with attributes. We inspect them and check the generic type they implement. This way we register message handlers by their message type dynamically. You write a handler class and it simply works.<p>Windows Forms had a PropertyGrid control which did the same thing as my text interface, but with a grid of properties you can edit freely.<p>Most of this stuff is typically done at runtime. But you <i>could</i> have it be static if you wanted. A precious job did this to access the backing array inside of a List&lt;&gt; object. I offer no explanation or excuse for that one.</div><br/></div></div><div id="40851942" class="c"><input type="checkbox" id="c-40851942" checked=""/><div class="controls bullet"><span class="by">greenavocado</span><span>|</span><a href="#40851614">parent</a><span>|</span><a href="#40853615">prev</a><span>|</span><a href="#40853159">next</a><span>|</span><label class="collapse" for="c-40851942">[-]</label><label class="expand" for="c-40851942">[4 more]</label></div><br/><div class="children"><div class="content">Any sort of reflection brings C++ one step closer to Python.<p>Implementing serialization for complex types often requires manual code writing or external tools. With static reflection you could automate this process<p><pre><code>  template&lt;typename T&gt;
+  void serialize(const T&amp; obj, std::ostream&amp; os) {
+      for_each(reflect(T), [&amp;](auto member) {
+          os &lt;&lt; member.name() &lt;&lt; &quot;: &quot; &lt;&lt; member.get(obj) &lt;&lt; &quot;\n&quot;;
+      });
+  }
+</code></pre>
+Simplified property systems<p><pre><code>    class Person {
+    public:
+        Person(const std::string&amp; name, int age)
+            : name(name), age(age) {}
+
+        std::string getName() const { return name; }
+        void setName(const std::string&amp; name) { this-&gt;name = name; }
+
+        int getAge() const { return age; }
+        void setAge(int age) { this-&gt;age = age; }
+
+    private:
+        std::string name;
+        int age;
+
+        REFLECT_PROPERTIES(
+            (name, &quot;Name of the person&quot;),
+            (age, &quot;Age of the person&quot;)
+        )
+    };
+
+    int main() {
+        Person person(&quot;Alice&quot;, 30);
+
+        auto properties = reflect::getProperties&lt;Person&gt;();
+
+        for (const auto&amp; prop : properties) {
+            std::cout &lt;&lt; &quot;Property: &quot; &lt;&lt; prop.name 
+                    &lt;&lt; &quot; (&quot; &lt;&lt; prop.description &lt;&lt; &quot;)&quot; &lt;&lt; std::endl;
+            
+            auto value = reflect::get(person, prop.name);
+            std::cout &lt;&lt; &quot;Value: &quot; &lt;&lt; value &lt;&lt; std::endl;
+
+            if (prop.name == &quot;age&quot;) {
+                reflect::set(person, prop.name, 31);
+            }
+        }
+
+        std::cout &lt;&lt; &quot;Updated age: &quot; &lt;&lt; person.getAge() &lt;&lt; std::endl;
+
+        return 0;
+    }
+
+</code></pre>
+Simplified template metaprogramming<p><pre><code>    template&lt;typename T&gt;
+    void printTypeInfo() {
+        constexpr auto info = reflect(T);
+        std::cout &lt;&lt; &quot;Type name: &quot; &lt;&lt; info.name() &lt;&lt; &quot;\n&quot;;
+        std::cout &lt;&lt; &quot;Member count: &quot; &lt;&lt; info.members().size() &lt;&lt; &quot;\n&quot;;
+    }
+</code></pre>
+Easier to write generic algorithms that work with arbitrary types<p><pre><code>    template&lt;typename T&gt;
+    void printAllMembers(const T&amp; obj) {
+        for_each(reflect(T), [&amp;](auto member) {
+            std::cout &lt;&lt; member.name() &lt;&lt; &quot;: &quot; &lt;&lt; member.get(obj) &lt;&lt; &quot;\n&quot;;
+        });
+    }</code></pre></div><br/><div id="40854231" class="c"><input type="checkbox" id="c-40854231" checked=""/><div class="controls bullet"><span class="by">tsimionescu</span><span>|</span><a href="#40851614">root</a><span>|</span><a href="#40851942">parent</a><span>|</span><a href="#40853159">next</a><span>|</span><label class="collapse" for="c-40854231">[-]</label><label class="expand" for="c-40854231">[3 more]</label></div><br/><div class="children"><div class="content">Note that you should really be using std:print rather than std::cout if using modern C++.</div><br/><div id="40854358" class="c"><input type="checkbox" id="c-40854358" checked=""/><div class="controls bullet"><span class="by">npoc</span><span>|</span><a href="#40851614">root</a><span>|</span><a href="#40854231">parent</a><span>|</span><a href="#40853159">next</a><span>|</span><label class="collapse" for="c-40854358">[-]</label><label class="expand" for="c-40854358">[2 more]</label></div><br/><div class="children"><div class="content">Just because it&#x27;s newer doesn&#x27;t make it better. There are good reasons for avoiding iostream</div><br/><div id="40854750" class="c"><input type="checkbox" id="c-40854750" checked=""/><div class="controls bullet"><span class="by">tsimionescu</span><span>|</span><a href="#40851614">root</a><span>|</span><a href="#40854358">parent</a><span>|</span><a href="#40853159">next</a><span>|</span><label class="collapse" for="c-40854750">[-]</label><label class="expand" for="c-40854750">[1 more]</label></div><br/><div class="children"><div class="content">That&#x27;s my point - iostream is a really bad piece of code, and if you&#x27;re anyway going to use modern C++, it&#x27;s really recommended to stop using it.</div><br/></div></div></div></div></div></div></div></div><div id="40853159" class="c"><input type="checkbox" id="c-40853159" checked=""/><div class="controls bullet"><span class="by">bdd8f1df777b</span><span>|</span><a href="#40851614">parent</a><span>|</span><a href="#40851942">prev</a><span>|</span><a href="#40851675">next</a><span>|</span><label class="collapse" for="c-40853159">[-]</label><label class="expand" for="c-40853159">[2 more]</label></div><br/><div class="children"><div class="content">What I commonly need is JSON serialization&#x2F;parsing directly with structs.</div><br/><div id="40853788" class="c"><input type="checkbox" id="c-40853788" checked=""/><div class="controls bullet"><span class="by">beached_whale</span><span>|</span><a href="#40851614">root</a><span>|</span><a href="#40853159">parent</a><span>|</span><a href="#40851675">next</a><span>|</span><label class="collapse" for="c-40853788">[-]</label><label class="expand" for="c-40853788">[1 more]</label></div><br/><div class="children"><div class="content">They exist, for instance <a href="https:&#x2F;&#x2F;github.com&#x2F;beached&#x2F;daw_json_link">https:&#x2F;&#x2F;github.com&#x2F;beached&#x2F;daw_json_link</a> , uses mappings of JSON &lt;-&gt; class members&#x2F;construction.  It handles a bunch of types out of the box and allows custom types to be mapped.  Also, it integrates with some of the reflection like libraries out there now(Boost.Describe&#x2F;Boost.PFR) and will be trivial to add C++26 static reflection when available.<p>Because the library doesn’t need to allocate unless the underlying types being parsed to do, it has been constexpr since C++17 too.<p>A bunch of people have used libraries that use macros for reflection like or PFR to integrate other C++ JSON Libraries too.</div><br/></div></div></div></div><div id="40851675" class="c"><input type="checkbox" id="c-40851675" checked=""/><div class="controls bullet"><span class="by">quotemstr</span><span>|</span><a href="#40851614">parent</a><span>|</span><a href="#40853159">prev</a><span>|</span><a href="#40852552">next</a><span>|</span><label class="collapse" for="c-40851675">[-]</label><label class="expand" for="c-40851675">[9 more]</label></div><br/><div class="children"><div class="content">&gt;   What type of problems static reflection could solve, in general?<p>Imagine making a plain<p><pre><code>    struct Point { float x; float y; };
+</code></pre>
+and wanting to serialize it to JSON without further ceremony</div><br/><div id="40851792" class="c"><input type="checkbox" id="c-40851792" checked=""/><div class="controls bullet"><span class="by">throwway120385</span><span>|</span><a href="#40851614">root</a><span>|</span><a href="#40851675">parent</a><span>|</span><a href="#40853917">next</a><span>|</span><label class="collapse" for="c-40851792">[-]</label><label class="expand" for="c-40851792">[6 more]</label></div><br/><div class="children"><div class="content">This is the thing that&#x27;s driving me away from C++ very quickly. A big part of our code base is code that handles this, and it either has to be in a DSL and constantly recompiled or we have to make a bunch of boilerplate. It&#x27;s a huge problem for the language not to be able to do this.</div><br/><div id="40853258" class="c"><input type="checkbox" id="c-40853258" checked=""/><div class="controls bullet"><span class="by">germandiago</span><span>|</span><a href="#40851614">root</a><span>|</span><a href="#40851792">parent</a><span>|</span><a href="#40852051">next</a><span>|</span><label class="collapse" for="c-40853258">[-]</label><label class="expand" for="c-40853258">[2 more]</label></div><br/><div class="children"><div class="content">I suggest you to take a look at Boost.Describe.<p>I have a scripting layer in a game that needs to set properties in a C++ Model. I used a single Boost.Describe macro per struct and a generic get&#x2F;set property. It worked very well and made me get rid of a lot of boilerplate.<p><a href="https:&#x2F;&#x2F;www.boost.org&#x2F;doc&#x2F;libs&#x2F;develop&#x2F;libs&#x2F;describe&#x2F;doc&#x2F;html&#x2F;describe.html" rel="nofollow">https:&#x2F;&#x2F;www.boost.org&#x2F;doc&#x2F;libs&#x2F;develop&#x2F;libs&#x2F;describe&#x2F;doc&#x2F;htm...</a></div><br/><div id="40853792" class="c"><input type="checkbox" id="c-40853792" checked=""/><div class="controls bullet"><span class="by">beached_whale</span><span>|</span><a href="#40851614">root</a><span>|</span><a href="#40853258">parent</a><span>|</span><a href="#40852051">next</a><span>|</span><label class="collapse" for="c-40853792">[-]</label><label class="expand" for="c-40853792">[1 more]</label></div><br/><div class="children"><div class="content">Boost.PFR is really neat and doesn’t need manual mapping for aggregate types</div><br/></div></div></div></div><div id="40852051" class="c"><input type="checkbox" id="c-40852051" checked=""/><div class="controls bullet"><span class="by">greenavocado</span><span>|</span><a href="#40851614">root</a><span>|</span><a href="#40851792">parent</a><span>|</span><a href="#40853258">prev</a><span>|</span><a href="#40852750">next</a><span>|</span><label class="collapse" for="c-40852051">[-]</label><label class="expand" for="c-40852051">[1 more]</label></div><br/><div class="children"><div class="content">Example of serializing a C++ object to JSON with reflection:<p><pre><code>    template&lt;typename T&gt;
+    std::string to_json(const T&amp; obj) {
+        std::ostringstream oss;
+        constexpr auto type_info = reflect(T);
+
+        if constexpr (type_info.is_fundamental()) {
+            &#x2F;&#x2F; Fundamental types (int, float, etc.)
+            if constexpr (std::is_same_v&lt;T, bool&gt;) {
+                oss &lt;&lt; (obj ? &quot;true&quot; : &quot;false&quot;);
+            } else if constexpr (std::is_arithmetic_v&lt;T&gt;) {
+                oss &lt;&lt; obj;
+            } else if constexpr (std::is_same_v&lt;T, std::string&gt;) {
+                oss &lt;&lt; &quot;\&quot;&quot; &lt;&lt; obj &lt;&lt; &quot;\&quot;&quot;;
+            }
+        }
+        else if constexpr (type_info.is_enum()) {
+            &#x2F;&#x2F; Enums
+            oss &lt;&lt; &quot;\&quot;&quot; &lt;&lt; type_info.enum_name(obj) &lt;&lt; &quot;\&quot;&quot;;
+        }
+        else if constexpr (type_info.is_array() || std::is_same_v&lt;T, std::vector&lt;typename T::value_type&gt;&gt;) {
+            &#x2F;&#x2F; Arrays and vectors
+            oss &lt;&lt; &quot;[&quot;;
+            bool first = true;
+            for (const auto&amp; elem : obj) {
+                if (!first) oss &lt;&lt; &quot;,&quot;;
+                oss &lt;&lt; to_json(elem);
+                first = false;
+            }
+            oss &lt;&lt; &quot;]&quot;;
+        }
+        else if constexpr (std::is_same_v&lt;T, std::map&lt;typename T::key_type, typename T::mapped_type&gt;&gt;) {
+            &#x2F;&#x2F; Maps
+            oss &lt;&lt; &quot;{&quot;;
+            bool first = true;
+            for (const auto&amp; [key, value] : obj) {
+                if (!first) oss &lt;&lt; &quot;,&quot;;
+                oss &lt;&lt; &quot;\&quot;&quot; &lt;&lt; key &lt;&lt; &quot;\&quot;:&quot; &lt;&lt; to_json(value);
+                first = false;
+            }
+            oss &lt;&lt; &quot;}&quot;;
+        }
+        else if constexpr (type_info.is_class()) {
+            &#x2F;&#x2F; Classes and structs
+            oss &lt;&lt; &quot;{&quot;;
+            bool first = true;
+            for (const auto&amp; member : type_info.members()) {
+                if (!first) oss &lt;&lt; &quot;,&quot;;
+                oss &lt;&lt; &quot;\&quot;&quot; &lt;&lt; member.name() &lt;&lt; &quot;\&quot;:&quot; &lt;&lt; to_json(member.get(obj));
+                first = false;
+            }
+            oss &lt;&lt; &quot;}&quot;;
+        }
+
+        return oss.str();
+    }
+
+
+    enum class Color { Red, Green, Blue };
+
+    struct Address {
+        std::string street;
+        std::string city;
+        int zip;
+    };
+
+    struct Person {
+        std::string name;
+        int age;
+        double height;
+        Color favorite_color;
+        Address address;
+        std::vector&lt;std::string&gt; hobbies;
+        std::map&lt;std::string, int&gt; scores;
+    };
+
+    int main() {
+        Person person {
+            &quot;John Doe&quot;,
+            30,
+            175.5,
+            Color::Blue,
+            {&quot;123 Main St&quot;, &quot;Anytown&quot;, 12345},
+            {&quot;reading&quot;, &quot;hiking&quot;, &quot;coding&quot;},
+            {{&quot;math&quot;, 95}, {&quot;history&quot;, 88}, {&quot;science&quot;, 92}}
+        };
+
+        std::cout &lt;&lt; to_json(person) &lt;&lt; std::endl;
+
+        return 0;
+    }</code></pre></div><br/></div></div><div id="40852750" class="c"><input type="checkbox" id="c-40852750" checked=""/><div class="controls bullet"><span class="by">intelVISA</span><span>|</span><a href="#40851614">root</a><span>|</span><a href="#40851792">parent</a><span>|</span><a href="#40852051">prev</a><span>|</span><a href="#40853917">next</a><span>|</span><label class="collapse" for="c-40852750">[-]</label><label class="expand" for="c-40852750">[2 more]</label></div><br/><div class="children"><div class="content">Serialization is largely a Solved Problem in modern C++ thanks to template metaprogramming. Wrangling a kludge DSL instead of Serialize&lt;T&gt; betrays poor lang knowledge...</div><br/><div id="40853507" class="c"><input type="checkbox" id="c-40853507" checked=""/><div class="controls bullet"><span class="by">utensil4778</span><span>|</span><a href="#40851614">root</a><span>|</span><a href="#40852750">parent</a><span>|</span><a href="#40853917">next</a><span>|</span><label class="collapse" for="c-40853507">[-]</label><label class="expand" for="c-40853507">[1 more]</label></div><br/><div class="children"><div class="content">One could argue that template metaprogramming is a kludge DSL of its own.</div><br/></div></div></div></div></div></div><div id="40853917" class="c"><input type="checkbox" id="c-40853917" checked=""/><div class="controls bullet"><span class="by">sankhao</span><span>|</span><a href="#40851614">root</a><span>|</span><a href="#40851675">parent</a><span>|</span><a href="#40851792">prev</a><span>|</span><a href="#40852552">next</a><span>|</span><label class="collapse" for="c-40853917">[-]</label><label class="expand" for="c-40853917">[2 more]</label></div><br/><div class="children"><div class="content">This is doable in c++20 <a href="https:&#x2F;&#x2F;github.com&#x2F;stephenberry&#x2F;glaze">https:&#x2F;&#x2F;github.com&#x2F;stephenberry&#x2F;glaze</a></div><br/><div id="40854242" class="c"><input type="checkbox" id="c-40854242" checked=""/><div class="controls bullet"><span class="by">_flux</span><span>|</span><a href="#40851614">root</a><span>|</span><a href="#40853917">parent</a><span>|</span><a href="#40852552">next</a><span>|</span><label class="collapse" for="c-40854242">[-]</label><label class="expand" for="c-40854242">[1 more]</label></div><br/><div class="children"><div class="content">That&#x27;s pretty neat! What&#x27;s the C++20 feature that enables this?</div><br/></div></div></div></div></div></div><div id="40851661" class="c"><input type="checkbox" id="c-40851661" checked=""/><div class="controls bullet"><span class="by">adamnemecek</span><span>|</span><a href="#40851614">parent</a><span>|</span><a href="#40852552">prev</a><span>|</span><a href="#40851743">next</a><span>|</span><label class="collapse" for="c-40851661">[-]</label><label class="expand" for="c-40851661">[1 more]</label></div><br/><div class="children"><div class="content">Serialization comes to mind.</div><br/></div></div></div></div><div id="40851743" class="c"><input type="checkbox" id="c-40851743" checked=""/><div class="controls bullet"><span class="by">ahartmetz</span><span>|</span><a href="#40851614">prev</a><span>|</span><a href="#40851332">next</a><span>|</span><label class="collapse" for="c-40851743">[-]</label><label class="expand" for="c-40851743">[1 more]</label></div><br/><div class="children"><div class="content">This looks surprisingly fine! The opaque, extensible types remind me of Win32 with its extensibility through ever new message types. The syntax looks better than expected, too - well, it&#x27;s better than templates...</div><br/></div></div><div id="40851332" class="c"><input type="checkbox" id="c-40851332" checked=""/><div class="controls bullet"><span class="by">bingo3131</span><span>|</span><a href="#40851743">prev</a><span>|</span><a href="#40854550">next</a><span>|</span><label class="collapse" for="c-40851332">[-]</label><label class="expand" for="c-40851332">[2 more]</label></div><br/><div class="children"><div class="content">FYI: this is the latest draft of the proposal and it has not been voted into C++26 yet, but it is getting close.</div><br/><div id="40851393" class="c"><input type="checkbox" id="c-40851393" checked=""/><div class="controls bullet"><span class="by">steveklabnik</span><span>|</span><a href="#40851332">parent</a><span>|</span><a href="#40854550">next</a><span>|</span><label class="collapse" for="c-40851393">[-]</label><label class="expand" for="c-40851393">[1 more]</label></div><br/><div class="children"><div class="content"><a href="https:&#x2F;&#x2F;github.com&#x2F;cplusplus&#x2F;papers&#x2F;issues&#x2F;1668#issuecomment-2192430067">https:&#x2F;&#x2F;github.com&#x2F;cplusplus&#x2F;papers&#x2F;issues&#x2F;1668#issuecomment...</a><p>Looks like it did very well in St. Louis!</div><br/></div></div></div></div><div id="40854550" class="c"><input type="checkbox" id="c-40854550" checked=""/><div class="controls bullet"><span class="by">raymond_goo</span><span>|</span><a href="#40851332">prev</a><span>|</span><a href="#40851159">next</a><span>|</span><label class="collapse" for="c-40854550">[-]</label><label class="expand" for="c-40854550">[1 more]</label></div><br/><div class="children"><div class="content">Ctrl-F &quot;networking&quot;, cry, close page...<p>See also: <a href="https:&#x2F;&#x2F;github.com&#x2F;cplusplus&#x2F;networking-ts">https:&#x2F;&#x2F;github.com&#x2F;cplusplus&#x2F;networking-ts</a></div><br/></div></div><div id="40851159" class="c"><input type="checkbox" id="c-40851159" checked=""/><div class="controls bullet"><span class="by">pjmlp</span><span>|</span><a href="#40854550">prev</a><span>|</span><a href="#40851491">next</a><span>|</span><label class="collapse" for="c-40851159">[-]</label><label class="expand" for="c-40851159">[3 more]</label></div><br/><div class="children"><div class="content">Note that there are links pointing to examples on Compiler Explorer, using the EDG and clang preview implementations.</div><br/><div id="40851532" class="c"><input type="checkbox" id="c-40851532" checked=""/><div class="controls bullet"><span class="by">a_e_k</span><span>|</span><a href="#40851159">parent</a><span>|</span><a href="#40851491">next</a><span>|</span><label class="collapse" for="c-40851532">[-]</label><label class="expand" for="c-40851532">[2 more]</label></div><br/><div class="children"><div class="content">Yes, that&#x27;s a clever way of demonstrating viability (and with more than one compiler implementation).<p>I do like the examples that I see there.<p>This seems like the kind of language feature that I might not make much use of directly in general application code, but would wrap up in utility functions or use via lower-level libraries that the application code builds on.  E.g., they showed command-line parsing, but I could also see this for benchmarking and testing frameworks to automatically find the workloads and tests in a non-hacky way.<p>I also wonder about how this feature interacts with translation units or modules and linkage, though.  I&#x27;m reminded of the static initialization order fiasco; this seems like it might open up issues that make that look tame by comparison.  (Not a complaint; I&#x27;m actually looking forward to this.)</div><br/><div id="40854257" class="c"><input type="checkbox" id="c-40854257" checked=""/><div class="controls bullet"><span class="by">pjmlp</span><span>|</span><a href="#40851159">root</a><span>|</span><a href="#40851532">parent</a><span>|</span><a href="#40851491">next</a><span>|</span><label class="collapse" for="c-40854257">[-]</label><label class="expand" for="c-40854257">[1 more]</label></div><br/><div class="children"><div class="content">I am a big defender that the only way to fix many of the mistakes that ended up in the standard is to adopt the same policy as other languages, papers without preview implementations shouldn&#x27;t be accepted.<p>There are still a few gotchas being ironed out, there was a talk at ACCU about many corner cases.</div><br/></div></div></div></div></div></div><div id="40851491" class="c"><input type="checkbox" id="c-40851491" checked=""/><div class="controls bullet"><span class="by">flykespice</span><span>|</span><a href="#40851159">prev</a><span>|</span><a href="#40852102">next</a><span>|</span><label class="collapse" for="c-40851491">[-]</label><label class="expand" for="c-40851491">[1 more]</label></div><br/><div class="children"><div class="content">Has finally the committee come to <i>reflection</i> after decades of standard revisions and footguns? &#x2F;j</div><br/></div></div><div id="40852102" class="c"><input type="checkbox" id="c-40852102" checked=""/><div class="controls bullet"><span class="by">kstrauser</span><span>|</span><a href="#40851491">prev</a><span>|</span><a href="#40851285">next</a><span>|</span><label class="collapse" for="c-40852102">[-]</label><label class="expand" for="c-40852102">[5 more]</label></div><br/><div class="children"><div class="content">I haven&#x27;t touched C++ since undergrad. Neither have I written any Qt code. But from memory, doesn&#x27;t Qt&#x27;s moc implement some of this stuff because it wasn&#x27;t available in C++? Could this replace moc?</div><br/><div id="40852535" class="c"><input type="checkbox" id="c-40852535" checked=""/><div class="controls bullet"><span class="by">jacoblambda</span><span>|</span><a href="#40852102">parent</a><span>|</span><a href="#40852283">next</a><span>|</span><label class="collapse" for="c-40852535">[-]</label><label class="expand" for="c-40852535">[1 more]</label></div><br/><div class="children"><div class="content">Qt&#x27;s moc can already be replaced and it increasingly is being relied on less and less as time goes on but dropping moc requires dropping all lower C++ standards or maintaining separate moc and modern-c++ versions.<p>And while it can currently be replaced with templates alone in fairly old versions of C++ (C++14 is the oldest I think), compile times are egregious unless you use very new, shiny features.<p>And as much as I am pro &quot;move to new shiny C++&quot;, one of the big commercial uses of Qt is in semi-embedded applications like car entertainment centers where you are stuck with whatever (often outdated) toolchain your SOC source relies on. So pushing for shiny new Qt risks either splitting Qt in half or abandoning a lot of very well paying users.</div><br/></div></div><div id="40852283" class="c"><input type="checkbox" id="c-40852283" checked=""/><div class="controls bullet"><span class="by">fluoridation</span><span>|</span><a href="#40852102">parent</a><span>|</span><a href="#40852535">prev</a><span>|</span><a href="#40852302">next</a><span>|</span><label class="collapse" for="c-40852283">[-]</label><label class="expand" for="c-40852283">[1 more]</label></div><br/><div class="children"><div class="content">Qt has straight-up dynamic reflection. You can get pointers to functions from strings, and such. This is just static reflections (which is still very useful!), so it&#x27;s not a complete replacement. Even if it was, I would Qt would replace its build system.</div><br/></div></div><div id="40852302" class="c"><input type="checkbox" id="c-40852302" checked=""/><div class="controls bullet"><span class="by">shkurski_</span><span>|</span><a href="#40852102">parent</a><span>|</span><a href="#40852283">prev</a><span>|</span><a href="#40854005">next</a><span>|</span><label class="collapse" for="c-40852302">[-]</label><label class="expand" for="c-40852302">[1 more]</label></div><br/><div class="children"><div class="content">moc can be replaced without reflection: <a href="https:&#x2F;&#x2F;woboq.com&#x2F;blog&#x2F;verdigris-qt-without-moc.html" rel="nofollow">https:&#x2F;&#x2F;woboq.com&#x2F;blog&#x2F;verdigris-qt-without-moc.html</a></div><br/></div></div><div id="40854005" class="c"><input type="checkbox" id="c-40854005" checked=""/><div class="controls bullet"><span class="by">self_awareness</span><span>|</span><a href="#40852102">parent</a><span>|</span><a href="#40852302">prev</a><span>|</span><a href="#40851285">next</a><span>|</span><label class="collapse" for="c-40854005">[-]</label><label class="expand" for="c-40854005">[1 more]</label></div><br/><div class="children"><div class="content">I&#x27;ve always wondered what&#x27;s the point of &quot;replacing moc&quot;. I mean what&#x27;s the problem with moc? It&#x27;s required by Qt, and completely transparent by the build system. You don&#x27;t even know it&#x27;s used.<p>I mean, GCC also has some helper tools used to compile C++ code and we don&#x27;t talk about &quot;replacing them&quot;.<p>Why people want to remove moc from Qt?</div><br/></div></div></div></div><div id="40851285" class="c"><input type="checkbox" id="c-40851285" checked=""/><div class="controls bullet"><span class="by">Dwedit</span><span>|</span><a href="#40852102">prev</a><span>|</span><a href="#40854050">next</a><span>|</span><label class="collapse" for="c-40851285">[-]</label><label class="expand" for="c-40851285">[15 more]</label></div><br/><div class="children"><div class="content">Compile time or runtime?  Compile time reflection would be completely painless and bloat-free.</div><br/><div id="40851736" class="c"><input type="checkbox" id="c-40851736" checked=""/><div class="controls bullet"><span class="by">thechao</span><span>|</span><a href="#40851285">parent</a><span>|</span><a href="#40851300">next</a><span>|</span><label class="collapse" for="c-40851736">[-]</label><label class="expand" for="c-40851736">[4 more]</label></div><br/><div class="children"><div class="content">Having implemented reflection in languages like C(++), before, it is most certainly <i>not</i> bloat-free. There are sorts of &#x27;obvious&#x27; things programmers do (like enum-reflection) that end up injecting strings all over the place. The overhead is (worst case) proportional to the source-code size, in those cases. In other cases, you end up with bloat proportional to heavily-utilized template libraries. However, unless the reflection system is very clever, i.e., exposes enough information to the linker to strip duplicate-ish symbols, you end up with a bunch of reflection copies.</div><br/><div id="40852644" class="c"><input type="checkbox" id="c-40852644" checked=""/><div class="controls bullet"><span class="by">rerdavies</span><span>|</span><a href="#40851285">root</a><span>|</span><a href="#40851736">parent</a><span>|</span><a href="#40852761">next</a><span>|</span><label class="collapse" for="c-40852644">[-]</label><label class="expand" for="c-40852644">[1 more]</label></div><br/><div class="children"><div class="content">extern templates address the issue of having multiple instances of a template being expanded inline, with only minimal mess and fuss. (A way to prevent inlining of templated code would have been nice too).</div><br/></div></div><div id="40852761" class="c"><input type="checkbox" id="c-40852761" checked=""/><div class="controls bullet"><span class="by">zarzavat</span><span>|</span><a href="#40851285">root</a><span>|</span><a href="#40851736">parent</a><span>|</span><a href="#40852644">prev</a><span>|</span><a href="#40851300">next</a><span>|</span><label class="collapse" for="c-40852761">[-]</label><label class="expand" for="c-40852761">[2 more]</label></div><br/><div class="children"><div class="content">I always thought it’s good practice in C&#x2F;C++ to have only one translation unit in release builds e.g. SQLite amalgamations, instead of relying on LTO. It also speeds up compilation because it isn’t recompiling the same header files over and over again.</div><br/><div id="40853586" class="c"><input type="checkbox" id="c-40853586" checked=""/><div class="controls bullet"><span class="by">kccqzy</span><span>|</span><a href="#40851285">root</a><span>|</span><a href="#40852761">parent</a><span>|</span><a href="#40851300">next</a><span>|</span><label class="collapse" for="c-40853586">[-]</label><label class="expand" for="c-40853586">[1 more]</label></div><br/><div class="children"><div class="content">It&#x27;s a cute idea but just not scalable. It doesn&#x27;t speed up compilation because separate translation units can be compiled independently and cached.</div><br/></div></div></div></div></div></div><div id="40851300" class="c"><input type="checkbox" id="c-40851300" checked=""/><div class="controls bullet"><span class="by">armchairhacker</span><span>|</span><a href="#40851285">parent</a><span>|</span><a href="#40851736">prev</a><span>|</span><a href="#40851330">next</a><span>|</span><label class="collapse" for="c-40851300">[-]</label><label class="expand" for="c-40851300">[1 more]</label></div><br/><div class="children"><div class="content">Compile-time (“static reflection”)</div><br/></div></div><div id="40851330" class="c"><input type="checkbox" id="c-40851330" checked=""/><div class="controls bullet"><span class="by">shortrounddev2</span><span>|</span><a href="#40851285">parent</a><span>|</span><a href="#40851300">prev</a><span>|</span><a href="#40854050">next</a><span>|</span><label class="collapse" for="c-40851330">[-]</label><label class="expand" for="c-40851330">[9 more]</label></div><br/><div class="children"><div class="content">RTTI is a super vital feature for deserializing without having to generate code or write a ton of tedious boilerplate. I&#x27;d be very happy with RTTI in C++ and my life would be instantly easier if there were RTTI in typescript so I didn&#x27;t have to use any of the hacky solutions out there for deserializing JSON on backends without RTTI.<p>I suppose C++&#x27;s template system might be able to generate JSON deserializers with static reflection as well</div><br/><div id="40851369" class="c"><input type="checkbox" id="c-40851369" checked=""/><div class="controls bullet"><span class="by">chongli</span><span>|</span><a href="#40851285">root</a><span>|</span><a href="#40851330">parent</a><span>|</span><a href="#40851644">next</a><span>|</span><label class="collapse" for="c-40851369">[-]</label><label class="expand" for="c-40851369">[7 more]</label></div><br/><div class="children"><div class="content">You don&#x27;t need RTTI to deserialize data in a clean way. What you need is return-type polymorphism. Haskell has this and it makes writing serializers and deserializers symmetric and totally painless.</div><br/><div id="40851442" class="c"><input type="checkbox" id="c-40851442" checked=""/><div class="controls bullet"><span class="by">fooker</span><span>|</span><a href="#40851285">root</a><span>|</span><a href="#40851369">parent</a><span>|</span><a href="#40851644">next</a><span>|</span><label class="collapse" for="c-40851442">[-]</label><label class="expand" for="c-40851442">[6 more]</label></div><br/><div class="children"><div class="content">Return type polymorphism and inheritance doesn&#x27;t mix very well.<p>Swift got into this mess early in it&#x27;s lifecycle and it&#x27;s type checking is still more expensive than the rest of the compiler combined, and unpredictable on top of that.</div><br/><div id="40852119" class="c"><input type="checkbox" id="c-40852119" checked=""/><div class="controls bullet"><span class="by">Maxatar</span><span>|</span><a href="#40851285">root</a><span>|</span><a href="#40851442">parent</a><span>|</span><a href="#40851982">next</a><span>|</span><label class="collapse" for="c-40852119">[-]</label><label class="expand" for="c-40852119">[4 more]</label></div><br/><div class="children"><div class="content">C++ has both return type polymorphism and inheritance. What it doesn&#x27;t have is the kind of type inference that Haskell has. Its type inference is very limited.</div><br/><div id="40853546" class="c"><input type="checkbox" id="c-40853546" checked=""/><div class="controls bullet"><span class="by">fooker</span><span>|</span><a href="#40851285">root</a><span>|</span><a href="#40852119">parent</a><span>|</span><a href="#40851982">next</a><span>|</span><label class="collapse" for="c-40853546">[-]</label><label class="expand" for="c-40853546">[3 more]</label></div><br/><div class="children"><div class="content">You can&#x27;t have two functions that differ in just the return type in C++</div><br/><div id="40853661" class="c"><input type="checkbox" id="c-40853661" checked=""/><div class="controls bullet"><span class="by">slaymaker1907</span><span>|</span><a href="#40851285">root</a><span>|</span><a href="#40853546">parent</a><span>|</span><a href="#40853704">next</a><span>|</span><label class="collapse" for="c-40853661">[-]</label><label class="expand" for="c-40853661">[1 more]</label></div><br/><div class="children"><div class="content">You can sort of do it so long as the return type is a template parameter.<p><pre><code>    template&lt;typename T&gt;
+    T my_construct() { T result; return result; }</code></pre></div><br/></div></div><div id="40853704" class="c"><input type="checkbox" id="c-40853704" checked=""/><div class="controls bullet"><span class="by">pritambaral</span><span>|</span><a href="#40851285">root</a><span>|</span><a href="#40853546">parent</a><span>|</span><a href="#40853661">prev</a><span>|</span><a href="#40851982">next</a><span>|</span><label class="collapse" for="c-40853704">[-]</label><label class="expand" for="c-40853704">[1 more]</label></div><br/><div class="children"><div class="content">You can, if you abuse C++ enough. I needed this very thing for a custom DSL.<p><pre><code>    struct PolyReturn {
+      const int value;
+      operator int() const { return value; }
+      operator bool() const { return value &gt; 0; }
+    };
+
+</code></pre>
+<a href="https:&#x2F;&#x2F;cppinsights.io&#x2F;s&#x2F;f0b9976f" rel="nofollow">https:&#x2F;&#x2F;cppinsights.io&#x2F;s&#x2F;f0b9976f</a></div><br/></div></div></div></div></div></div><div id="40851982" class="c"><input type="checkbox" id="c-40851982" checked=""/><div class="controls bullet"><span class="by">chongli</span><span>|</span><a href="#40851285">root</a><span>|</span><a href="#40851442">parent</a><span>|</span><a href="#40852119">prev</a><span>|</span><a href="#40851644">next</a><span>|</span><label class="collapse" for="c-40851982">[-]</label><label class="expand" for="c-40851982">[1 more]</label></div><br/><div class="children"><div class="content">Yeah if you ask me, inheritance is the one to go. Every time. Inheritance just makes things more complicated. It’s not a great tool of abstraction.</div><br/></div></div></div></div></div></div><div id="40851644" class="c"><input type="checkbox" id="c-40851644" checked=""/><div class="controls bullet"><span class="by">comex</span><span>|</span><a href="#40851285">root</a><span>|</span><a href="#40851330">parent</a><span>|</span><a href="#40851369">prev</a><span>|</span><a href="#40854050">next</a><span>|</span><label class="collapse" for="c-40851644">[-]</label><label class="expand" for="c-40851644">[1 more]</label></div><br/><div class="children"><div class="content">&gt; I suppose C++&#x27;s template system might be able to generate JSON deserializers with static reflection as well<p>It definitely can, and it will be faster and more type-safe than doing it at runtime.  But if you do want to do it at runtime, well, it&#x27;s possible to implement runtime reflection as a library on top of compile-time reflection, so someone will probably do that.</div><br/></div></div></div></div></div></div><div id="40854050" class="c"><input type="checkbox" id="c-40854050" checked=""/><div class="controls bullet"><span class="by">forrestthewoods</span><span>|</span><a href="#40851285">prev</a><span>|</span><a href="#40853639">next</a><span>|</span><label class="collapse" for="c-40854050">[-]</label><label class="expand" for="c-40854050">[2 more]</label></div><br/><div class="children"><div class="content">I&#x27;m surprised at the positive response in this thread. I find the syntax of this beyond atrocious! My goodness C++ really does not know how to do anything simply does it?</div><br/><div id="40854198" class="c"><input type="checkbox" id="c-40854198" checked=""/><div class="controls bullet"><span class="by">z_open</span><span>|</span><a href="#40854050">parent</a><span>|</span><a href="#40853639">next</a><span>|</span><label class="collapse" for="c-40854198">[-]</label><label class="expand" for="c-40854198">[1 more]</label></div><br/><div class="children"><div class="content">Many C++ features are useless outside of writing libraries, but your typical developer is going to be forced to understand how they work at some point. The result is just a burden.</div><br/></div></div></div></div><div id="40852649" class="c"><input type="checkbox" id="c-40852649" checked=""/><div class="controls bullet"><span class="by">jdeaton</span><span>|</span><a href="#40853639">prev</a><span>|</span><label class="collapse" for="c-40852649">[-]</label><label class="expand" for="c-40852649">[2 more]</label></div><br/><div class="children"><div class="content">More ways to make your c++ impossibly unreadable. Cant wait to baffle future maintainers</div><br/><div id="40854051" class="c"><input type="checkbox" id="c-40854051" checked=""/><div class="controls bullet"><span class="by">nox101</span><span>|</span><a href="#40852649">parent</a><span>|</span><label class="collapse" for="c-40854051">[-]</label><label class="expand" for="c-40854051">[1 more]</label></div><br/><div class="children"><div class="content">Haha<p><a href="https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=EqiLTgQcDPM" rel="nofollow">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=EqiLTgQcDPM</a><p>But still, happy to have the new solutions</div><br/></div></div></div></div></div></div></div></div></div></body></html>
