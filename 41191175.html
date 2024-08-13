@@ -1,0 +1,92 @@
+<!DOCTYPE html><html lang="en"><head><title>Static News</title><meta charSet="utf-8"/><meta name="description" content="Static delayed Hacker News."/><meta name="theme-color" media="(prefers-color-scheme: light)" content="white"/><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1d1f21"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><meta name="application-name" content="Static News"/><meta name="apple-mobile-web-app-title" content="Static News"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="#1d1f21"/><link rel="preload" href="styles.css?v=1723539678927" as="style"/><link rel="stylesheet" href="styles.css?v=1723539678927"/></head><body><div id="container"><div id="inner"><header><a href="/">Static News</a><a href="/about">about</a></header><div id="content"><div><div id="title"><a href="https://jakearchibald.com/2024/video-with-transparency/">Video with Alpha Transparency on the Web</a> <span class="domain">(<a href="https://jakearchibald.com">jakearchibald.com</a>)</span></div><div class="subtext"><span>surprisetalk</span> | <span>16 comments</span></div><br/><div><div id="41232359" class="c"><input type="checkbox" id="c-41232359" checked=""/><div class="controls bullet"><span class="by">gyan</span><span>|</span><a href="#41233475">next</a><span>|</span><label class="collapse" for="c-41232359">[-]</label><label class="expand" for="c-41232359">[2 more]</label></div><br/><div class="children"><div class="content">&gt; There&#x27;s a feature request for the open source &amp; cross-platform x265 codec to support transparency, but it doesn&#x27;t seem to be going anywhere.<p>x265 has added support for alpha very recently, but only using their standalone CLI.
+<a href="https:&#x2F;&#x2F;bitbucket.org&#x2F;multicoreware&#x2F;x265_git&#x2F;commits&#x2F;c8c9d22075b26aa279b4d634c61889ca3d49656e" rel="nofollow">https:&#x2F;&#x2F;bitbucket.org&#x2F;multicoreware&#x2F;x265_git&#x2F;commits&#x2F;c8c9d22...</a></div><br/><div id="41233594" class="c"><input type="checkbox" id="c-41233594" checked=""/><div class="controls bullet"><span class="by">jaffathecake</span><span>|</span><a href="#41232359">parent</a><span>|</span><a href="#41233475">next</a><span>|</span><label class="collapse" for="c-41233594">[-]</label><label class="expand" for="c-41233594">[1 more]</label></div><br/><div class="children"><div class="content">Ohhhh! I totally missed this. Thanks for the heads up!</div><br/></div></div></div></div><div id="41233475" class="c"><input type="checkbox" id="c-41233475" checked=""/><div class="controls bullet"><span class="by">alex_suzuki</span><span>|</span><a href="#41232359">prev</a><span>|</span><a href="#41232015">next</a><span>|</span><label class="collapse" for="c-41233475">[-]</label><label class="expand" for="c-41233475">[1 more]</label></div><br/><div class="children"><div class="content">Apple ProRes 4444 deserves a mention. It&#x27;s used a lot in professional contexts like digital signage, event projections etc.<p>Edit: sorry, ProRes is of course not &quot;on the web&quot;.</div><br/></div></div><div id="41232015" class="c"><input type="checkbox" id="c-41232015" checked=""/><div class="controls bullet"><span class="by">mrandish</span><span>|</span><a href="#41233475">prev</a><span>|</span><a href="#41232070">next</a><span>|</span><label class="collapse" for="c-41232015">[-]</label><label class="expand" for="c-41232015">[1 more]</label></div><br/><div class="children"><div class="content">It has always both surprised and dismayed me that transparent video on the web is still so damn hard. It&#x27;s nice to see someone managing to make it work and then sharing their solution.</div><br/></div></div><div id="41232070" class="c"><input type="checkbox" id="c-41232070" checked=""/><div class="controls bullet"><span class="by">mmcclure</span><span>|</span><a href="#41232015">prev</a><span>|</span><a href="#41232245">next</a><span>|</span><label class="collapse" for="c-41232070">[-]</label><label class="expand" for="c-41232070">[1 more]</label></div><br/><div class="children"><div class="content">I feel this, and not even in a situation that had complex transparency needs. I went down a path that needed the surrounding background perfectly matched to the video background, and it ended up being easier to render the video to a canvas, get the rendered pixel value, and update the surrounding background. Still necessary even knowing what the video background color <i>should</i> be given browser differences in rendering the video’s color. Prompted a fun conversation internally, though[1].<p>[1] <a href="https:&#x2F;&#x2F;www.mux.com&#x2F;blog&#x2F;your-browser-and-my-browser-see-different-colors" rel="nofollow">https:&#x2F;&#x2F;www.mux.com&#x2F;blog&#x2F;your-browser-and-my-browser-see-dif...</a></div><br/></div></div><div id="41232245" class="c"><input type="checkbox" id="c-41232245" checked=""/><div class="controls bullet"><span class="by">andrewstuart</span><span>|</span><a href="#41232070">prev</a><span>|</span><a href="#41232809">next</a><span>|</span><label class="collapse" for="c-41232245">[-]</label><label class="expand" for="c-41232245">[4 more]</label></div><br/><div class="children"><div class="content">Here you go - problem solved - maybe? This link shows animated transparent webp:<p><a href="https:&#x2F;&#x2F;static.crowdwave.link&#x2F;transparentanimatedwebp.html" rel="nofollow">https:&#x2F;&#x2F;static.crowdwave.link&#x2F;transparentanimatedwebp.html</a><p>Seems to work on Chrome, Firefox and Safari.<p>The video file is here: <a href="https:&#x2F;&#x2F;static.crowdwave.link&#x2F;transparentanimatedwebp.webp" rel="nofollow">https:&#x2F;&#x2F;static.crowdwave.link&#x2F;transparentanimatedwebp.webp</a><p>I put the result of the code below here:<p>This python program will generate webp frames and if you have ffmpeg will convert them to transparent animated webp:<p><pre><code>    from PIL import Image, ImageDraw
+    import random
+    import subprocess
+    
+    # Image parameters
+    width, height = 640, 480
+    frames = 1000
+    shapes = 10
+    
+    def random_color():
+        # Generate a random RGBA color with varying levels of transparency (alpha)
+        return (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255), random.randint(50, 200))
+    
+    def random_position():
+        return random.randint(0, width - 80), random.randint(0, height - 80)
+    
+    def random_size():
+        return random.randint(20, 80)
+    
+    def create_gradient(width, height):
+        base = Image.new(&#x27;RGBA&#x27;, (width, height))
+        top = Image.new(&#x27;RGBA&#x27;, (width, height))
+        for y in range(height):
+            alpha = int((y &#x2F; height) * 255)  # Alpha varies from 0 to 255
+            for x in range(width):
+                top.putpixel((x, y), (255, 255, 255, alpha))  # White gradient
+        return Image.alpha_composite(base, top)
+    
+    # Create a series of images
+    for i in range(frames):
+        # Create an image with a transparent gradient background
+        img = create_gradient(width, height)
+        draw = ImageDraw.Draw(img)
+    
+        for _ in range(shapes):
+            shape_type = random.choice([&#x27;rectangle&#x27;, &#x27;ellipse&#x27;])
+            x1, y1 = random_position()
+            x2, y2 = x1 + random_size(), y1 + random_size()
+            color = random_color()
+    
+            if shape_type == &#x27;rectangle&#x27;:
+                draw.rectangle([x1, y1, x2, y2], fill=color)
+            elif shape_type == &#x27;ellipse&#x27;:
+                draw.ellipse([x1, y1, x2, y2], fill=color)
+    
+        # Save each frame as a PNG file
+        img.save(f&#x27;frame_{i:04d}.png&#x27;)
+    
+    print(&quot;Frames created successfully.&quot;)
+    
+    # Create an animated WebP from the generated frames
+    subprocess.run([
+        &#x27;ffmpeg&#x27;, &#x27;-y&#x27;, &#x27;-i&#x27;, &#x27;frame_%04d.png&#x27;, &#x27;-vf&#x27;, &#x27;fps=30,scale=320:-1:flags=lanczos&#x27;,
+        &#x27;-loop&#x27;, &#x27;0&#x27;, &#x27;-pix_fmt&#x27;, &#x27;yuva420p&#x27;, &#x27;output.webp&#x27;
+    ])
+    
+    print(&quot;Animated WebP created successfully.&quot;)
+
+
+
+</code></pre>
+Then put the output.webp and this index.html on your local disk somewhere and load the index.html in a browser.<p>Pull the slider to change the background so you can see it is transparent.<p><pre><code>    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+        &lt;title&gt;Animated WebP Display with Background Image&lt;&#x2F;title&gt;
+        &lt;style&gt;
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-image: url(&#x27;transparentanimatedwebp.jpg&#x27;);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        &lt;&#x2F;style&gt;
+    &lt;&#x2F;head&gt;
+    &lt;body&gt;
+    
+        &lt;img src=&quot;transparentanimatedwebp.webp&quot; alt=&quot;Animated WebP&quot;&gt;
+    
+    &lt;&#x2F;body&gt;
+    &lt;&#x2F;html&gt;</code></pre></div><br/><div id="41233563" class="c"><input type="checkbox" id="c-41233563" checked=""/><div class="controls bullet"><span class="by">jaffathecake</span><span>|</span><a href="#41232245">parent</a><span>|</span><a href="#41233271">next</a><span>|</span><label class="collapse" for="c-41233563">[-]</label><label class="expand" for="c-41233563">[1 more]</label></div><br/><div class="children"><div class="content">Animated WebP is based on VP8. However, the alpha channel is stored losslessly, which makes compression even worse than VP8.<p>VP8 is of course a generation behind VP9, so the results will be significantly worse than the VP9 example in the article, which is significantly worse than AV1.<p>Also, the demo crashes Safari for me (it plays progressively slower and slower).</div><br/></div></div><div id="41233271" class="c"><input type="checkbox" id="c-41233271" checked=""/><div class="controls bullet"><span class="by">blopker</span><span>|</span><a href="#41232245">parent</a><span>|</span><a href="#41233563">prev</a><span>|</span><a href="#41232809">next</a><span>|</span><label class="collapse" for="c-41233271">[-]</label><label class="expand" for="c-41233271">[2 more]</label></div><br/><div class="children"><div class="content">TFA did mention using animated AVIF, but not WebP for some reason. The issues still stand though, no playback controls, no programmatic playback, no audio. For my use case, I was not able to get an animated WebP to just play once and stop.<p>Edit: also no desktop Safari support for transparent animated WebP.</div><br/><div id="41233474" class="c"><input type="checkbox" id="c-41233474" checked=""/><div class="controls bullet"><span class="by">andrewstuart</span><span>|</span><a href="#41232245">root</a><span>|</span><a href="#41233271">parent</a><span>|</span><a href="#41232809">next</a><span>|</span><label class="collapse" for="c-41233474">[-]</label><label class="expand" for="c-41233474">[1 more]</label></div><br/><div class="children"><div class="content">Can be done but requires a server.<p>&gt;&gt; Edit: also no desktop Safari support for transparent animated WebP.<p>Do you mean the link above that I posted?  Works fine in my desktop Safari.<p><a href="https:&#x2F;&#x2F;static.crowdwave.link&#x2F;transparentanimatedwebp.html" rel="nofollow">https:&#x2F;&#x2F;static.crowdwave.link&#x2F;transparentanimatedwebp.html</a></div><br/></div></div></div></div></div></div><div id="41232809" class="c"><input type="checkbox" id="c-41232809" checked=""/><div class="controls bullet"><span class="by">kevingadd</span><span>|</span><a href="#41232245">prev</a><span>|</span><a href="#41232142">next</a><span>|</span><label class="collapse" for="c-41232809">[-]</label><label class="expand" for="c-41232809">[1 more]</label></div><br/><div class="children"><div class="content">It&#x27;s frustrating to see full vs limited range is still an issue in 2024. I was hoping it would have been figured out for web video by now, but we&#x27;re still in a situation (at least on Windows) where you can end up having to go into the nvidia control panel and mess with settings to make video look correct in webpages... And then in the case where you manually split the alpha channel out, limited range could mess up the alpha channel. Painful.</div><br/></div></div><div id="41232142" class="c"><input type="checkbox" id="c-41232142" checked=""/><div class="controls bullet"><span class="by">moralestapia</span><span>|</span><a href="#41232809">prev</a><span>|</span><a href="#41232059">next</a><span>|</span><label class="collapse" for="c-41232142">[-]</label><label class="expand" for="c-41232142">[1 more]</label></div><br/><div class="children"><div class="content">Phew, old times, I had to solve this with a crafty solution using Flash back in the day.<p>(Un)surprised to know this is still an issue in 2024.</div><br/></div></div><div id="41232059" class="c"><input type="checkbox" id="c-41232059" checked=""/><div class="controls bullet"><span class="by">andrewstuart</span><span>|</span><a href="#41232142">prev</a><span>|</span><label class="collapse" for="c-41232059">[-]</label><label class="expand" for="c-41232059">[4 more]</label></div><br/><div class="children"><div class="content">What about animated PNG?<p><a href="https:&#x2F;&#x2F;apng.onevcat.com&#x2F;demo&#x2F;" rel="nofollow">https:&#x2F;&#x2F;apng.onevcat.com&#x2F;demo&#x2F;</a><p>Or animated webp?<p><a href="https:&#x2F;&#x2F;mathiasbynens.be&#x2F;demo&#x2F;animated-webp" rel="nofollow">https:&#x2F;&#x2F;mathiasbynens.be&#x2F;demo&#x2F;animated-webp</a><p><a href="https:&#x2F;&#x2F;cobalt.googlesource.com&#x2F;cobalt&#x2F;+&#x2F;refs&#x2F;tags&#x2F;trunk.unnest&#x2F;cobalt&#x2F;demos&#x2F;content&#x2F;transparent-animated-webp-demo&#x2F;webp-animated-semitransparent4.webp" rel="nofollow">https:&#x2F;&#x2F;cobalt.googlesource.com&#x2F;cobalt&#x2F;+&#x2F;refs&#x2F;tags&#x2F;trunk.unn...</a></div><br/><div id="41233591" class="c"><input type="checkbox" id="c-41233591" checked=""/><div class="controls bullet"><span class="by">jaffathecake</span><span>|</span><a href="#41232059">parent</a><span>|</span><a href="#41233222">next</a><span>|</span><label class="collapse" for="c-41233591">[-]</label><label class="expand" for="c-41233591">[1 more]</label></div><br/><div class="children"><div class="content">PNG is a lossless format, so you file sizes will be huge. Although it can build upon previous frames, it can only do so in a really simple GIF-like way (drawing over the top). For example, the bouncing ball example on Wikipedia is 62 kB <a href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;APNG#&#x2F;media&#x2F;File:Animated_PNG_example_bouncing_beach_ball.png" rel="nofollow">https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;APNG#&#x2F;media&#x2F;File:Animated_PNG_...</a>, whereas the equivalent VP9 is 7 kB <a href="https:&#x2F;&#x2F;static-misc-3.glitch.me&#x2F;alpha-video&#x2F;" rel="nofollow">https:&#x2F;&#x2F;static-misc-3.glitch.me&#x2F;alpha-video&#x2F;</a>.<p>Animated WebP is based on VP8. However, the alpha channel is stored losslessly, which makes compression even worse than VP8.<p>VP8 is of course a generation behind VP9, so the results will be significantly worse than the VP9 example in the article, which is significantly worse than AV1.<p>There are also playback issues in Safari.</div><br/></div></div><div id="41233222" class="c"><input type="checkbox" id="c-41233222" checked=""/><div class="controls bullet"><span class="by">lukan</span><span>|</span><a href="#41232059">parent</a><span>|</span><a href="#41233591">prev</a><span>|</span><a href="#41232100">next</a><span>|</span><label class="collapse" for="c-41233222">[-]</label><label class="expand" for="c-41233222">[1 more]</label></div><br/><div class="children"><div class="content">With apng the filsize will get huge very quickly.<p>Webp is the same, only a little bit better.<p>In both cases you need all the frames as complete pictures after all.</div><br/></div></div><div id="41232100" class="c"><input type="checkbox" id="c-41232100" checked=""/><div class="controls bullet"><span class="by">dawnerd</span><span>|</span><a href="#41232059">parent</a><span>|</span><a href="#41233222">prev</a><span>|</span><label class="collapse" for="c-41232100">[-]</label><label class="expand" for="c-41232100">[1 more]</label></div><br/><div class="children"><div class="content">I had to use apng a while back and it was surprisingly difficult to generate one that worked well. I forget if we kept it long term, it was janky as heck. I don’t believe webp was as widely supported at the time either which might have been easier.</div><br/></div></div></div></div></div></div></div></div></div></body></html>
