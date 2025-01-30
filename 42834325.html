@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="en"><head><title>Static News</title><meta charSet="utf-8"/><meta name="description" content="Static delayed Hacker News."/><meta name="theme-color" media="(prefers-color-scheme: light)" content="white"/><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1d1f21"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><meta name="application-name" content="Static News"/><meta name="apple-mobile-web-app-title" content="Static News"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="#1d1f21"/><link rel="preload" href="styles.css?v=1738227667500" as="style"/><link rel="stylesheet" href="styles.css?v=1738227667500"/></head><body><div id="container"><div id="inner"><header><a href="/">Static News</a><a href="/about">about</a></header><div id="content"><div><div id="title"><a>Show HN: TinyJs React like framework in 35 lines of code</a> </div><div class="subtext"><span>atum47</span> | <span>17 comments</span></div><br/><div><div id="42875521" class="c"><input type="checkbox" id="c-42875521" checked=""/><div class="controls bullet"><span class="by">chrismorgan</span><span>|</span><a href="#42876051">next</a><span>|</span><label class="collapse" for="c-42875521">[-]</label><label class="expand" for="c-42875521">[2 more]</label></div><br/><div class="children"><div class="content">A comment on code organisation.<p><a href="https:&#x2F;&#x2F;github.com&#x2F;victorqribeiro&#x2F;TinyApp&#x2F;blob&#x2F;db92225cfd0aed935b7dd6f70e36c0a852a5e462&#x2F;js&#x2F;Input.js">https:&#x2F;&#x2F;github.com&#x2F;victorqribeiro&#x2F;TinyApp&#x2F;blob&#x2F;db92225cfd0ae...</a>:<p><pre><code>  export default function Input(state) {
+
+      const inp = input({  &#x2F;&#x2F; ①
+          type: &#x27;number&#x27;, value: state.count, onchange
+      })
+
+      function update() {  &#x2F;&#x2F; ②
+          inp.value = state.count
+      }
+
+      function onchange() {  &#x2F;&#x2F; ③
+          state.count = parseInt(this.value)
+      }
+
+      state.addUpdate(&#x27;count&#x27;, update)  &#x2F;&#x2F; ④
+
+      return inp
+  }
+</code></pre>
+(Labelling comments mine.)<p>This ordering isn’t great: ① refers to ③, and ④ refers to ②. It’d be better to reorder them, <i>at least</i> to swap ② and ③, and remove the blank line separating ② and ④:<p><pre><code>  export default function Input(state) {
+      const inp = input({  &#x2F;&#x2F; ①
+          type: &#x27;number&#x27;, value: state.count, onchange
+      })
+
+      function onchange() {  &#x2F;&#x2F; ③
+          state.count = parseInt(this.value)
+      }
+
+      function update() {  &#x2F;&#x2F; ②
+          inp.value = state.count
+      }
+      state.addUpdate(&#x27;count&#x27;, update)  &#x2F;&#x2F; ④
+
+      return inp
+  }
+</code></pre>
+But you really can do <i>much</i> better:<p><pre><code>  export default function Input(state) {
+      const inp = input({
+          type: &#x27;number&#x27;,
+          value: state.count,
+          onchange() {
+              state.count = parseInt(this.value)
+          }
+      })
+
+      state.addUpdate(&#x27;count&#x27;, function() {
+          inp.value = state.count
+      })
+
+      return inp
+  }
+</code></pre>
+At least at this scale, that’s <i>much</i> easier to follow.<p>Inlining can improve other places too (though at larger scales it becomes more debatable):<p><pre><code>  export default function Button(state) {
+      return button({
+          onclick() {
+              state.count += 1
+          },
+          style: {
+              color: &#x27;black&#x27;,
+              border: &#x27;solid 1px black&#x27;
+          },
+      }, &#x27;+ 1&#x27;)
+  }</code></pre></div><br/></div></div><div id="42876051" class="c"><input type="checkbox" id="c-42876051" checked=""/><div class="controls bullet"><span class="by">leontrolski</span><span>|</span><a href="#42875521">prev</a><span>|</span><a href="#42875478">next</a><span>|</span><label class="collapse" for="c-42876051">[-]</label><label class="expand" for="c-42876051">[1 more]</label></div><br/><div class="children"><div class="content">33 line React  <a href="https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=22776753">https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=22776753</a></div><br/></div></div><div id="42834388" class="c"><input type="checkbox" id="c-42834388" checked=""/><div class="controls bullet"><span class="by">codingdave</span><span>|</span><a href="#42875478">prev</a><span>|</span><label class="collapse" for="c-42834388">[-]</label><label class="expand" for="c-42834388">[12 more]</label></div><br/><div class="children"><div class="content">So, if you are building this off &#x27;window&#x27;, you are basically just adding syntax sugar to one big global variable. That is absolutely a simple solution to storing state. In one place. But that is not comparable to the functionality of React, so I&#x27;m not sure I agree that it is a &quot;react-like framework&quot;.</div><br/><div id="42834566" class="c"><input type="checkbox" id="c-42834566" checked=""/><div class="controls bullet"><span class="by">atum47</span><span>|</span><a href="#42834388">parent</a><span>|</span><a href="#42875509">next</a><span>|</span><label class="collapse" for="c-42834566">[-]</label><label class="expand" for="c-42834566">[10 more]</label></div><br/><div class="children"><div class="content">I&#x27;m guilty of using React as framework to try to copy from. After working with it for the past 5 years I end up wanting something like it but with less bloat to use in my personal projects. So, what I tried to do: have functional components with JSX like syntax and a managed state that is in sync with the UI. Giving those 3 features and the syntax, I used the term React like.</div><br/><div id="42875258" class="c"><input type="checkbox" id="c-42875258" checked=""/><div class="controls bullet"><span class="by">MarcelOlsz</span><span>|</span><a href="#42834388">root</a><span>|</span><a href="#42834566">parent</a><span>|</span><a href="#42875189">next</a><span>|</span><label class="collapse" for="c-42875258">[-]</label><label class="expand" for="c-42875258">[1 more]</label></div><br/><div class="children"><div class="content">Check out &quot;preact&quot; if you haven&#x27;t already [0]<p>[0] - <a href="https:&#x2F;&#x2F;preactjs.com&#x2F;" rel="nofollow">https:&#x2F;&#x2F;preactjs.com&#x2F;</a></div><br/></div></div><div id="42875189" class="c"><input type="checkbox" id="c-42875189" checked=""/><div class="controls bullet"><span class="by">EGreg</span><span>|</span><a href="#42834388">root</a><span>|</span><a href="#42834566">parent</a><span>|</span><a href="#42875258">prev</a><span>|</span><a href="#42875509">next</a><span>|</span><label class="collapse" for="c-42875189">[-]</label><label class="expand" for="c-42875189">[8 more]</label></div><br/><div class="children"><div class="content">I never understood the fascination with JSX. Stuffing HTML into JS? You can stuff JS into HTML natively LOL.<p>Why not use HTML templates and Web Components, or something?  I would have thought React would become like jQuery, after Web Components were implemented natively in browsers, just like jQuery&#x27;s functionality was. But it&#x27;s still very popular.</div><br/><div id="42875262" class="c"><input type="checkbox" id="c-42875262" checked=""/><div class="controls bullet"><span class="by">MarcelOlsz</span><span>|</span><a href="#42834388">root</a><span>|</span><a href="#42875189">parent</a><span>|</span><a href="#42875650">next</a><span>|</span><label class="collapse" for="c-42875262">[-]</label><label class="expand" for="c-42875262">[2 more]</label></div><br/><div class="children"><div class="content">&gt;Why not use HTML templates and Web Components, or something? I would have thought React would become like jQuery, after Web Components were implemented natively in browsers, just like jQuery&#x27;s functionality was. But it&#x27;s still very popular.<p>Us frontend devs are so lost in the framework sauce that there is a 5 year lag between what web api&#x27;s can do and when it hits our slack channels.</div><br/><div id="42875584" class="c"><input type="checkbox" id="c-42875584" checked=""/><div class="controls bullet"><span class="by">paulddraper</span><span>|</span><a href="#42834388">root</a><span>|</span><a href="#42875262">parent</a><span>|</span><a href="#42875650">next</a><span>|</span><label class="collapse" for="c-42875584">[-]</label><label class="expand" for="c-42875584">[1 more]</label></div><br/><div class="children"><div class="content">Have you ever used web components?<p>They are absolutely not equivalent to what react does, though there is overlap.</div><br/></div></div></div></div><div id="42875650" class="c"><input type="checkbox" id="c-42875650" checked=""/><div class="controls bullet"><span class="by">jeswin</span><span>|</span><a href="#42834388">root</a><span>|</span><a href="#42875189">parent</a><span>|</span><a href="#42875262">prev</a><span>|</span><a href="#42875382">next</a><span>|</span><label class="collapse" for="c-42875650">[-]</label><label class="expand" for="c-42875650">[2 more]</label></div><br/><div class="children"><div class="content">&gt; I never understood the fascination with JSX.<p>HTML templating (without JSX) gives you markup as strings, which means you don&#x27;t get type checks, auto-complete, syntax highlighting etc.</div><br/><div id="42875871" class="c"><input type="checkbox" id="c-42875871" checked=""/><div class="controls bullet"><span class="by">mock-possum</span><span>|</span><a href="#42834388">root</a><span>|</span><a href="#42875650">parent</a><span>|</span><a href="#42875382">next</a><span>|</span><label class="collapse" for="c-42875871">[-]</label><label class="expand" for="c-42875871">[1 more]</label></div><br/><div class="children"><div class="content">Have you checked out lithtml?</div><br/></div></div></div></div><div id="42875382" class="c"><input type="checkbox" id="c-42875382" checked=""/><div class="controls bullet"><span class="by">globalise83</span><span>|</span><a href="#42834388">root</a><span>|</span><a href="#42875189">parent</a><span>|</span><a href="#42875650">prev</a><span>|</span><a href="#42875777">next</a><span>|</span><label class="collapse" for="c-42875382">[-]</label><label class="expand" for="c-42875382">[1 more]</label></div><br/><div class="children"><div class="content">Web components are still a little tricky to work with. For example, passing down a complex state to child components is easy in React, but in native web components not so straightforward. Stencil.js is a nice choice for that, but it is just as complicated as React to learn.</div><br/></div></div><div id="42875777" class="c"><input type="checkbox" id="c-42875777" checked=""/><div class="controls bullet"><span class="by">ajkjk</span><span>|</span><a href="#42834388">root</a><span>|</span><a href="#42875189">parent</a><span>|</span><a href="#42875382">prev</a><span>|</span><a href="#42875887">next</a><span>|</span><label class="collapse" for="c-42875777">[-]</label><label class="expand" for="c-42875777">[1 more]</label></div><br/><div class="children"><div class="content">they&#x27;re just so much easier to think in</div><br/></div></div><div id="42875887" class="c"><input type="checkbox" id="c-42875887" checked=""/><div class="controls bullet"><span class="by">thomasfromcdnjs</span><span>|</span><a href="#42834388">root</a><span>|</span><a href="#42875189">parent</a><span>|</span><a href="#42875777">prev</a><span>|</span><a href="#42875509">next</a><span>|</span><label class="collapse" for="c-42875887">[-]</label><label class="expand" for="c-42875887">[1 more]</label></div><br/><div class="children"><div class="content">expressiveness</div><br/></div></div></div></div></div></div></div></div></div></div></div></div></div></body></html>
